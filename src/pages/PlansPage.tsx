@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MessageCircle, Check, ShieldCheck, CreditCard, RefreshCw, ArrowRight, Settings } from 'lucide-react';
+import { MessageCircle, Check, CreditCard, RefreshCw, ArrowRight } from 'lucide-react';
 import { useSiteConfig } from '../context/ConfigContext';
 import { SEOHead } from '../components/SEOHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { buildWhatsAppUrl } from '../config/siteConfig';
 
 export const PlansPage: React.FC = () => {
-  const { config, getWhatsAppLink, setIsEditorOpen } = useSiteConfig();
+  const { config, getWhatsAppLink } = useSiteConfig();
 
   const breadcrumbs = [
     { name: 'Início', path: '/' },
@@ -36,8 +36,8 @@ export const PlansPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Planos e Preços UniTV — Mensal, Trimestral, Semestral e Anual"
-        description="Conheça os planos e preços da UniTV: opções Mensal (30 dias), Trimestral (90 dias), Semestral (180 dias) e Anual (365 dias). Ativação via código de 16 dígitos pelo WhatsApp."
+        title="Planos e Preços UniTV — Mensal, Trimestral e Anual"
+        description="Confira os planos da UniTV: Mensal R$ 29,90, Trimestral R$ 79,90, Semestral e Anual. Ativação imediata por código de 16 dígitos via WhatsApp."
         canonicalPath="/planos"
         breadcrumbs={breadcrumbs}
         schemaData={plansSchema}
@@ -146,19 +146,11 @@ export const PlansPage: React.FC = () => {
             ))}
           </div>
 
-          {/* Admin Quick Edit Bar */}
-          <div className="mt-8 p-4 bg-slate-50 border border-slate-200 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-600">
+          {/* Commercial Notice Bar */}
+          <div className="mt-8 p-4 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-600">
             <p>
-              <strong>Nota sobre Condições Comerciais:</strong> {config.commercialDisclaimer}
+              <strong>Informação Comercial:</strong> {config.commercialDisclaimer}
             </p>
-            <button
-              type="button"
-              onClick={() => setIsEditorOpen(true)}
-              className="inline-flex items-center gap-1.5 font-semibold text-orange-600 hover:text-orange-700 whitespace-nowrap shrink-0"
-            >
-              <Settings className="w-3.5 h-3.5" />
-              <span>Editar Valores</span>
-            </button>
           </div>
         </div>
       </section>

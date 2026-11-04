@@ -66,8 +66,8 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="UniTV — Planos, Teste Grátis, Como Instalar e Atendimento WhatsApp"
-        description="Portal comercial autorizado UniTV. Conheça como funciona a UniTV, solicite informações sobre o teste grátis, confira planos mensais e anuais, dispositivos compatíveis e fale no WhatsApp."
+        title="UniTV — Teste Grátis 3 Dias, Planos e Instalação"
+        description="Portal comercial autorizado UniTV. Teste grátis de 3 dias para novos usuários, planos a partir de R$ 29,90, instalação passo a passo e suporte no WhatsApp."
         canonicalPath="/"
         schemaData={homeSchema}
       />
@@ -495,7 +495,7 @@ export const HomePage: React.FC = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div className="max-w-2xl">
               <div className="text-xs font-semibold text-orange-600 mb-2">
-                Planos e Condições Comerciais · Valores Editáveis
+                Planos e Condições Comerciais · Sem Fidelidade
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-slate-950 tracking-tight">
                 Escolha o período ideal para ativar ou renovar sua UniTV

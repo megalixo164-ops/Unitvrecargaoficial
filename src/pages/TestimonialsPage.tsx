@@ -39,8 +39,8 @@ export const TestimonialsPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Avaliações de Clientes UniTV — Mais de 10 Mil Clientes Atendidos no Brasil"
-        description="Veja os depoimentos e feedbacks reais de clientes da UniTV em todo o Brasil sobre o aplicativo, o teste grátis de 3 dias e o suporte pelo WhatsApp."
+        title="Avaliações de Clientes UniTV — +10 Mil Atendidos"
+        description="Confira avaliações reais de clientes da UniTV em todo o Brasil sobre a estabilidade do aplicativo, o teste grátis de 3 dias e o suporte pelo WhatsApp."
         canonicalPath="/avaliacoes"
         breadcrumbs={breadcrumbs}
         schemaData={reviewsSchema}

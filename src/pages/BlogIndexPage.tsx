@@ -108,8 +108,8 @@ export const BlogIndexPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Blog UniTV — Tutoriais de Instalação, Dicas, Compatibilidade e Planos"
-        description="Central de artigos e tutoriais sobre a UniTV: aprenda como funciona, como conseguir teste grátis, instalar na Smart TV, usar em Samsung e LG, ativar e renovar."
+        title="Blog UniTV — Tutoriais de Instalação, Dicas e Planos"
+        description="Guias e tutoriais sobre a UniTV: aprenda como funciona, como conseguir teste grátis de 3 dias, instalar na Smart TV, usar em Samsung e LG e renovar."
         canonicalPath="/blog"
         breadcrumbs={breadcrumbs}
       />

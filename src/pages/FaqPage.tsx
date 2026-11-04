@@ -51,8 +51,8 @@ export const FaqPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Dúvidas Frequentes UniTV (FAQ) — Central de Ajuda e Suporte"
-        description="Respostas completas para as principais dúvidas sobre a UniTV: como funciona o teste grátis, planos, ativação de código de 16 dígitos, Smart TVs compatíveis e suporte."
+        title="Dúvidas Frequentes UniTV (FAQ) — Central de Ajuda"
+        description="Respostas rápidas sobre a UniTV: como funciona o teste grátis de 3 dias, planos, ativação do código de 16 dígitos, Smart TVs compatíveis e suporte."
         canonicalPath="/duvidas-frequentes"
         breadcrumbs={breadcrumbs}
         schemaData={faqSchema}

@@ -96,8 +96,8 @@ export const CompatibilityPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Dispositivos Compatíveis com a UniTV — Smart TV, TV Box, Fire Stick e Celular"
-        description="Descubra quais dispositivos são compatíveis com a UniTV: Smart TVs Android/Google TV, TV Box, Fire TV Stick, celulares Android e como usar em TVs Samsung e LG."
+        title="Dispositivos Compatíveis UniTV — Smart TV, Box e Celular"
+        description="Veja os dispositivos compatíveis com a UniTV: Smart TVs Android/Google TV, TV Box, Fire TV Stick, celulares Android e como usar em TVs Samsung e LG."
         canonicalPath="/dispositivos-compativeis"
         breadcrumbs={breadcrumbs}
       />

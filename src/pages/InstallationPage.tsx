@@ -52,8 +52,8 @@ export const InstallationPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Como Instalar a UniTV — Tutorial para Smart TV, TV Box, Fire Stick e Celular"
-        description="Passo a passo atualizado de como instalar a UniTV na Smart TV Android, Google TV, TV Box, Amazon Fire TV Stick, celular Android e orientações para TV Samsung e LG."
+        title="Como Instalar a UniTV — Smart TV, TV Box e Fire Stick"
+        description="Tutorial passo a passo para instalar a UniTV na Smart TV Android, Google TV, TV Box, Amazon Fire TV Stick, celular Android e uso em Samsung e LG."
         canonicalPath="/como-instalar"
         breadcrumbs={breadcrumbs}
         schemaData={howToSchema}

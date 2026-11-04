@@ -25,13 +25,18 @@ export const BlogPostPage: React.FC = () => {
     { name: post.title, path: `/blog/${post.slug}` },
   ];
 
+  const baseUrl = config.siteUrl.replace(/\/$/, '');
+  const fullCoverUrl = post.coverImage.startsWith('http')
+    ? post.coverImage
+    : `${baseUrl}${post.coverImage.startsWith('/') ? post.coverImage : `/${post.coverImage}`}`;
+
   const articleSchema = [
     {
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
       headline: post.title,
       description: post.metaDescription,
-      image: post.coverImage,
+      image: fullCoverUrl,
       datePublished: post.publishedAt,
       dateModified: post.updatedAt,
       author: {
@@ -43,12 +48,12 @@ export const BlogPostPage: React.FC = () => {
         name: config.brandName,
         logo: {
           '@type': 'ImageObject',
-          url: `${config.siteUrl}${config.officialLogoUrl}`,
+          url: `${baseUrl}${config.officialLogoUrl}`,
         },
       },
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': `${config.siteUrl}/blog/${post.slug}`,
+        '@id': `${baseUrl}/blog/${post.slug}`,
       },
     },
     ...(post.faqSnippet.length > 0
@@ -75,6 +80,7 @@ export const BlogPostPage: React.FC = () => {
         title={post.seoTitle}
         description={post.metaDescription}
         canonicalPath={`/blog/${post.slug}`}
+        imagePath={post.coverImage}
         ogType="article"
         publishedTime={post.publishedAt}
         modifiedTime={post.updatedAt}

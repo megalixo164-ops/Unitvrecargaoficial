@@ -39,8 +39,8 @@ export const FreeTrialPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="UniTV Teste Grátis de 3 Dias — Como Testar na Smart TV, TV Box e Celular"
-        description="Liberamos Teste Grátis de 3 dias da UniTV para novos usuários! Saiba como funciona a avaliação gratuita na Smart TV Android, TV Box, Fire Stick e celular pelo WhatsApp."
+        title="Teste Grátis UniTV 3 Dias — Smart TV, TV Box e Celular"
+        description="Liberamos Teste Grátis de 3 dias da UniTV para novos usuários! Saiba como testar na Smart TV Android, TV Box, Fire Stick e celular pelo WhatsApp."
         canonicalPath="/teste-gratis"
         breadcrumbs={breadcrumbs}
         schemaData={trialSchema}

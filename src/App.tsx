@@ -10,7 +10,6 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { MobileNavigation } from './components/MobileNavigation';
-import { ConfigEditorModal } from './components/ConfigEditorModal';
 import { CookieConsent } from './components/CookieConsent';
 import { HomePage } from './pages/HomePage';
 import { FreeTrialPage } from './pages/FreeTrialPage';
@@ -60,7 +59,6 @@ export default function App() {
           </main>
           <Footer />
           <FloatingWhatsApp />
-          <ConfigEditorModal />
           <CookieConsent />
         </div>
       </BrowserRouter>

@@ -44,8 +44,8 @@ export const HowItWorksPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Como Funciona a UniTV — O que é, Como Adquirir, Ativar e Utilizar"
-        description="Entenda detalhadamente o que é a UniTV, como funciona a tecnologia via internet em aparelhos Android, como adquirir seu plano, ativar o código e utilizar."
+        title="Como Funciona a UniTV — Guia de Uso, Planos e Ativação"
+        description="Entenda como funciona a UniTV em aparelhos Android, requisitos de internet, como adquirir seu plano pré-pago e ativar o código de 16 dígitos."
         canonicalPath="/como-funciona"
         breadcrumbs={breadcrumbs}
         schemaData={howItWorksSchema}

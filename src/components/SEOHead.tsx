@@ -11,6 +11,7 @@ interface SEOHeadProps {
   title: string;
   description: string;
   canonicalPath?: string;
+  imagePath?: string;
   ogType?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
@@ -22,6 +23,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   title,
   description,
   canonicalPath,
+  imagePath,
   ogType = 'website',
   publishedTime,
   modifiedTime,
@@ -33,8 +35,12 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
   const currentPath = canonicalPath ?? location.pathname;
   const baseUrl = config.siteUrl.replace(/\/$/, '');
-  const fullCanonicalUrl = `${baseUrl}${currentPath === '/' ? '' : currentPath}`;
-  const fullImageUrl = `${baseUrl}${config.officialLogoUrl}`;
+  const fullCanonicalUrl = `${baseUrl}${currentPath === '/' ? '/' : currentPath}`;
+  const resolvedImagePath = imagePath || config.officialLogoUrl;
+  const fullImageUrl = resolvedImagePath.startsWith('http')
+    ? resolvedImagePath
+    : `${baseUrl}${resolvedImagePath.startsWith('/') ? resolvedImagePath : `/${resolvedImagePath}`}`;
+  const fullLogoUrl = `${baseUrl}${config.officialLogoUrl}`;
 
   useEffect(() => {
     document.title = title;
@@ -57,6 +63,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     setMetaTag('meta[property="og:image"]', 'property', 'og:image', fullImageUrl);
     setMetaTag('meta[name="twitter:title"]', 'name', 'twitter:title', title);
     setMetaTag('meta[name="twitter:description"]', 'name', 'twitter:description', description);
+    setMetaTag('meta[name="twitter:image"]', 'name', 'twitter:image', fullImageUrl);
 
     if (publishedTime) {
       setMetaTag('meta[property="article:published_time"]', 'property', 'article:published_time', publishedTime);
@@ -89,8 +96,9 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         '@type': 'Organization',
         '@id': `${baseUrl}/#organization`,
         name: `${config.brandName} — ${config.portalSubtitle}`,
-        url: baseUrl,
-        logo: fullImageUrl,
+        url: `${baseUrl}/`,
+        logo: fullLogoUrl,
+        sameAs: [`${baseUrl}/`],
         contactPoint: {
           '@type': 'ContactPoint',
           telephone: `+55-${config.whatsapp.rawNumber}`,
@@ -103,7 +111,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         '@id': `${baseUrl}/#website`,
-        url: baseUrl,
+        url: `${baseUrl}/`,
         name: config.brandName,
         description: config.seo.defaultDescription,
         inLanguage: 'pt-BR',
@@ -121,7 +129,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
           '@type': 'ListItem',
           position: idx + 1,
           name: item.name,
-          item: `${baseUrl}${item.path === '/' ? '' : item.path}`,
+          item: `${baseUrl}${item.path === '/' ? '/' : item.path}`,
         })),
       });
     }
@@ -147,6 +155,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     description,
     fullCanonicalUrl,
     fullImageUrl,
+    fullLogoUrl,
     ogType,
     publishedTime,
     modifiedTime,

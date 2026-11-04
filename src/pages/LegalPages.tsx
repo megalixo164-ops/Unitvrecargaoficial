@@ -15,8 +15,8 @@ export const PrivacyPolicyPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Política de Privacidade e Adequação à LGPD — Portal UniTV"
-        description="Conheça nossa Política de Privacidade em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018)."
+        title="Política de Privacidade e LGPD — Portal UniTV"
+        description="Conheça a Política de Privacidade do portal comercial autorizado UniTV em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018)."
         canonicalPath="/politica-de-privacidade"
         breadcrumbs={breadcrumbs}
       />
@@ -91,7 +91,7 @@ export const TermsOfUsePage: React.FC = () => {
     <>
       <SEOHead
         title="Termos de Uso e Avisos Comerciais — Portal UniTV"
-        description="Leia os Termos de Uso, condições comerciais, requisitos técnicos de compatibilidade e avisos legais do portal comercial autorizado UniTV."
+        description="Leia os Termos de Uso, condições comerciais dos planos pré-pagos, regras do teste grátis de 3 dias e requisitos técnicos de compatibilidade da UniTV."
         canonicalPath="/termos-de-uso"
         breadcrumbs={breadcrumbs}
       />
@@ -161,8 +161,8 @@ export const ContactPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Contato e Suporte UniTV via WhatsApp — Atendimento Comercial"
-        description="Entre em contato com nosso atendimento comercial e suporte de instalação da UniTV pelo WhatsApp. Tire dúvidas sobre planos, teste grátis e ativação."
+        title="Contato e Suporte UniTV — Atendimento via WhatsApp"
+        description="Fale com o atendimento comercial e suporte técnico da UniTV pelo WhatsApp. Tire dúvidas sobre planos, teste grátis de 3 dias, instalação e ativação."
         canonicalPath="/contato"
         breadcrumbs={breadcrumbs}
       />

@@ -69,7 +69,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   brandName: 'UniTV',
   portalSubtitle: 'Comercialização Autorizada e Suporte ao Cliente',
   officialLogoUrl: '/assets/aistudio/image_10db7815.png',
-  siteUrl: import.meta.env.VITE_SITE_URL || 'https://unitv.com.br',
+  siteUrl: import.meta.env.VITE_SITE_URL || 'https://www.unitvportal.com.br',
   whatsapp: {
     rawNumber: '47992733349',
     countryCode: '55',
@@ -92,9 +92,9 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   seo: {
     ga4MeasurementId: import.meta.env.VITE_GA4_MEASUREMENT_ID || '',
     googleSiteVerification: import.meta.env.VITE_GOOGLE_SITE_VERIFICATION || '',
-    defaultTitle: 'UniTV — Teste Grátis de 3 Dias, Planos, Instalação e WhatsApp',
+    defaultTitle: 'UniTV — Teste Grátis 3 Dias, Planos e Instalação',
     defaultDescription:
-      'Portal comercial autorizado UniTV. Liberamos Teste Grátis de 3 dias para novos usuários! Consulte planos e preços, veja como instalar na Smart TV ou TV Box e fale pelo WhatsApp.',
+      'Portal comercial autorizado UniTV. Teste grátis de 3 dias para novos usuários, planos a partir de R$ 29,90, instalação passo a passo e suporte no WhatsApp.',
   },
   trial: {
     available: true,

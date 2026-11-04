@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MessageCircle, Settings, ShieldCheck, Clock, ExternalLink } from 'lucide-react';
+import { MessageCircle, ShieldCheck, Clock, ExternalLink } from 'lucide-react';
 import { useSiteConfig } from '../context/ConfigContext';
 
 export const Footer: React.FC = () => {
-  const { config, getWhatsAppLink, setIsEditorOpen } = useSiteConfig();
+  const { config, getWhatsAppLink } = useSiteConfig();
 
   return (
     <footer className="bg-slate-950 text-slate-300 border-t border-slate-800">
@@ -195,14 +195,6 @@ export const Footer: React.FC = () => {
             <p>
               © {new Date().getFullYear()} {config.brandName} — {config.portalSubtitle}. Todos os direitos reservados.
             </p>
-            <button
-              type="button"
-              onClick={() => setIsEditorOpen(true)}
-              className="inline-flex items-center gap-1.5 text-slate-400 hover:text-orange-400 transition-colors"
-            >
-              <Settings className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>Configurar Dados Comerciais e Preços</span>
-            </button>
           </div>
         </div>
       </div>
