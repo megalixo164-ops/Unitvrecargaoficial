@@ -1,0 +1,6 @@
+{
+  "name": "UniTV — Portal Comercial Autorizado | Planos, Teste e Instalação",
+  "description": "Portal comercial autorizado UniTV. Conheça os planos, verifique disponibilidade de teste grátis, veja tutoriais de instalação em Smart TV, TV Box e Fire Stick e solicite atendimento via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,6 @@
+{
+  "summary": "Plano de implementação para atualização da tabela de preços dos planos da UniTV (Mensal R$ 29,90, Trimestral R$ 79,90, Semestral R$ 159,90 e Anual R$ 289,90), recálculo automático da equivalência mensal, sincronização com armazenamento local do navegador e dados estruturados SEO Schema.org.",
+  "updatedAt": "2026-11-04T20:45:45.984553169Z",
+  "requestFeedback": true,
+  "userFacing": true
+}
