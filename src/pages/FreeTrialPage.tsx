@@ -47,13 +47,20 @@ export const FreeTrialPage: React.FC = () => {
       />
 
       {/* Page Hero */}
-      <section id="teste-condicoes" className="bg-slate-950 text-white py-14 lg:py-20 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        id="teste-condicoes"
+        className="relative bg-[#030712] text-white py-12 sm:py-16 lg:py-20 border-b border-slate-800/90 overflow-hidden"
+      >
+        <div
+          className="pointer-events-none absolute -top-28 right-1/4 w-[480px] h-[480px] rounded-full bg-gradient-to-tr from-emerald-600/15 via-orange-600/15 to-purple-600/15 blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Breadcrumbs items={breadcrumbs} dark />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             <div className="lg:col-span-7 space-y-5">
-              <div className="text-xs text-emerald-400 font-semibold">
+              <div className="text-xs text-emerald-400 font-bold uppercase tracking-wider">
                 Exclusivo para Novos Usuários · 3 Dias Grátis · Sem Cartão de Crédito
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight leading-tight">
@@ -70,14 +77,14 @@ export const FreeTrialPage: React.FC = () => {
                   href={getWhatsAppLink('freeTrial')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm sm:text-base font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-colors shadow-lg"
+                  className="min-h-[52px] inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm sm:text-base font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-all shadow-lg shadow-emerald-600/25 active:scale-[0.98]"
                 >
                   <MessageCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
                   <span>Solicitar Teste Grátis de 3 Dias no WhatsApp</span>
                 </a>
                 <Link
                   to="/como-instalar"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 text-sm sm:text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl transition-colors"
+                  className="min-h-[52px] inline-flex items-center justify-center gap-2 px-5 py-3.5 text-sm sm:text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl transition-all active:scale-[0.98]"
                 >
                   <span>Ver Tutorial de Instalação</span>
                   <ArrowRight className="w-4 h-4 text-orange-400" />
@@ -85,26 +92,28 @@ export const FreeTrialPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-5">
-              <div className="flex items-center gap-3 border-b border-slate-800 pb-4">
-                <ShieldCheck className="w-6 h-6 text-emerald-400 shrink-0" aria-hidden="true" />
-                <div>
-                  <h2 className="text-base font-bold text-white">Condições Transparentes de Avaliação</h2>
-                  <p className="text-xs text-slate-400">Sem cobrança automática após o período</p>
+            <div className="lg:col-span-5 rounded-2xl p-[1.5px] bg-gradient-to-br from-emerald-500/50 via-orange-500/40 to-purple-600/50 shadow-2xl">
+              <div className="bg-slate-950 rounded-[14px] p-6 sm:p-8 space-y-5">
+                <div className="flex items-center gap-3 border-b border-slate-800 pb-4">
+                  <ShieldCheck className="w-6 h-6 text-emerald-400 shrink-0" aria-hidden="true" />
+                  <div>
+                    <h2 className="text-base font-bold text-white">Condições Transparentes de Avaliação</h2>
+                    <p className="text-xs text-slate-400">Sem cobrança automática após o período</p>
+                  </div>
                 </div>
-              </div>
 
-              <ul className="space-y-3">
-                {config.trial.eligibilityRules.map((rule, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" aria-hidden="true" />
-                    <span>{rule}</span>
-                  </li>
-                ))}
-              </ul>
+                <ul className="space-y-3">
+                  {config.trial.eligibilityRules.map((rule, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                      <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" aria-hidden="true" />
+                      <span>{rule}</span>
+                    </li>
+                  ))}
+                </ul>
 
-              <div className="pt-3 border-t border-slate-800 text-xs text-slate-400 leading-relaxed">
-                {config.trial.importantNotice}
+                <div className="pt-3 border-t border-slate-800 text-xs text-slate-400 leading-relaxed">
+                  {config.trial.importantNotice}
+                </div>
               </div>
             </div>
           </div>
@@ -112,25 +121,32 @@ export const FreeTrialPage: React.FC = () => {
       </section>
 
       {/* Como Funciona o Teste na Prática */}
-      <section id="teste-passo-a-passo" className="py-16 lg:py-20 bg-white border-b border-slate-200">
+      <section id="teste-passo-a-passo" className="py-16 lg:py-20 bg-white border-b border-slate-200/90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-slate-950 tracking-tight">
               Como testar a UniTV grátis passo a passo?
             </h2>
-            <p className="mt-3 text-base text-slate-600 leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
               O processo de avaliação é realizado diretamente no aplicativo oficial instalado no seu dispositivo
               Android compatível. Confira as 3 etapas para realizar o teste:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
             {config.trial.stepsToTest.map((step) => (
-              <div key={step.stepNumber} className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-3">
-                <div className="text-xs font-mono-tabular font-bold text-orange-600">
+              <div
+                key={step.stepNumber}
+                className="relative bg-slate-50/90 border border-slate-200/90 rounded-2xl p-6 space-y-3 shadow-2xs hover:shadow-md transition-all overflow-hidden"
+              >
+                <div
+                  className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600"
+                  aria-hidden="true"
+                />
+                <div className="inline-flex items-center px-2.5 py-1 rounded-lg bg-orange-50 border border-orange-200/70 text-xs font-mono-tabular font-bold text-orange-600">
                   ETAPA {step.stepNumber}
                 </div>
-                <h3 className="text-lg font-bold text-slate-950">{step.title}</h3>
+                <h3 className="text-lg font-display font-extrabold text-slate-950">{step.title}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{step.description}</p>
               </div>
             ))}

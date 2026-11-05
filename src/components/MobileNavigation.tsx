@@ -23,7 +23,7 @@ export interface TopicItem {
   id: string;
   label: string;
   type: 'anchor' | 'route';
-  target: string; // e.g. 'planos-section' or '/como-instalar?dispositivo=fire-tv-stick'
+  target: string;
 }
 
 export const MobileNavigation: React.FC = () => {
@@ -31,12 +31,10 @@ export const MobileNavigation: React.FC = () => {
   const navigate = useNavigate();
   const { getWhatsAppLink } = useSiteConfig();
   const [sheetOpen, setSheetOpen] = useState(false);
-  const [activeAnchor, setActiveAnchor] = useState<string>('');
 
   // Close sheet on route change
   useEffect(() => {
     setSheetOpen(false);
-    setActiveAnchor('');
   }, [location.pathname, location.search]);
 
   // Contextual WhatsApp key
@@ -181,7 +179,7 @@ export const MobileNavigation: React.FC = () => {
           topics: [
             ...post.sections.map((sec, idx) => ({
               id: sec.id,
-              label: `${idx + 1}. ${sec.heading.slice(0, 28)}${sec.heading.length > 28 ? '…' : ''}`,
+              label: `${idx + 1}. ${sec.heading.slice(0, 32)}${sec.heading.length > 32 ? '…' : ''}`,
               type: 'anchor' as const,
               target: sec.id,
             })),
@@ -209,10 +207,9 @@ export const MobileNavigation: React.FC = () => {
   const handleTopicClick = (topic: TopicItem) => {
     setSheetOpen(false);
     if (topic.type === 'anchor') {
-      setActiveAnchor(topic.target);
       const element = document.getElementById(topic.target);
       if (element) {
-        const yOffset = -64;
+        const yOffset = -72;
         const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
@@ -236,57 +233,75 @@ export const MobileNavigation: React.FC = () => {
       {/* MOBILE BOTTOM THUMB BAR (Optimized for Android & iOS one-handed navigation) */}
       <nav
         aria-label="Barra Inferior de Navegação Mobile"
-        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 pb-safe shadow-lg"
+        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-slate-200/90 pb-safe shadow-[0_-8px_28px_rgba(15,23,42,0.08)]"
       >
-        <div className="grid grid-cols-5 items-center h-14 px-1">
+        <div className="grid grid-cols-5 items-center h-16 px-1.5">
           <Link
             to="/"
-            className={`flex flex-col items-center justify-center min-h-[44px] rounded-lg transition-colors active:scale-[0.96] ${
+            className={`relative flex flex-col items-center justify-center min-h-[48px] rounded-xl transition-all active:scale-[0.95] ${
               isBottomTabActive('/') ? 'text-orange-600 font-bold' : 'text-slate-600 hover:text-slate-950'
             }`}
           >
+            {isBottomTabActive('/') && (
+              <span
+                className="absolute top-0.5 w-6 h-1 rounded-full bg-gradient-to-r from-orange-500 to-rose-500"
+                aria-hidden="true"
+              />
+            )}
             <Home className="w-5 h-5" />
-            <span className="text-[10px] tracking-tight mt-0.5 whitespace-nowrap">Início</span>
+            <span className="text-[11px] tracking-tight mt-0.5 whitespace-nowrap">Início</span>
           </Link>
 
           <Link
             to="/teste-gratis"
-            className={`flex flex-col items-center justify-center min-h-[44px] rounded-lg transition-colors active:scale-[0.96] ${
+            className={`relative flex flex-col items-center justify-center min-h-[48px] rounded-xl transition-all active:scale-[0.95] ${
               isBottomTabActive('/teste-gratis')
                 ? 'text-orange-600 font-bold'
                 : 'text-slate-600 hover:text-slate-950'
             }`}
           >
+            {isBottomTabActive('/teste-gratis') && (
+              <span
+                className="absolute top-0.5 w-6 h-1 rounded-full bg-gradient-to-r from-orange-500 to-rose-500"
+                aria-hidden="true"
+              />
+            )}
             <Gift className="w-5 h-5" />
-            <span className="text-[10px] tracking-tight mt-0.5 whitespace-nowrap">Teste</span>
+            <span className="text-[11px] tracking-tight mt-0.5 whitespace-nowrap">Teste</span>
           </Link>
 
           <Link
             to="/planos"
-            className={`flex flex-col items-center justify-center min-h-[44px] rounded-lg transition-colors active:scale-[0.96] ${
+            className={`relative flex flex-col items-center justify-center min-h-[48px] rounded-xl transition-all active:scale-[0.95] ${
               isBottomTabActive('/planos') ? 'text-orange-600 font-bold' : 'text-slate-600 hover:text-slate-950'
             }`}
           >
+            {isBottomTabActive('/planos') && (
+              <span
+                className="absolute top-0.5 w-6 h-1 rounded-full bg-gradient-to-r from-orange-500 to-rose-500"
+                aria-hidden="true"
+              />
+            )}
             <CreditCard className="w-5 h-5" />
-            <span className="text-[10px] tracking-tight mt-0.5 whitespace-nowrap">Planos</span>
+            <span className="text-[11px] tracking-tight mt-0.5 whitespace-nowrap">Planos</span>
           </Link>
 
           <button
             type="button"
             onClick={() => setSheetOpen(true)}
-            className={`flex flex-col items-center justify-center min-h-[44px] rounded-lg transition-colors active:scale-[0.96] ${
+            className={`relative flex flex-col items-center justify-center min-h-[48px] rounded-xl transition-all active:scale-[0.95] ${
               sheetOpen ? 'text-orange-600 font-bold' : 'text-slate-600 hover:text-slate-950'
             }`}
           >
             <Compass className="w-5 h-5" />
-            <span className="text-[10px] tracking-tight mt-0.5 whitespace-nowrap">Tópicos</span>
+            <span className="text-[11px] tracking-tight mt-0.5 whitespace-nowrap">Tópicos</span>
           </button>
 
           <a
             href={getWhatsAppLink(getPageMessageKey())}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center min-h-[44px] mx-1 py-1 bg-emerald-600 text-white rounded-xl shadow-xs active:scale-[0.96]"
+            className="flex flex-col items-center justify-center min-h-[46px] mx-1 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl shadow-sm shadow-emerald-600/25 active:scale-[0.95] transition-all"
           >
             <MessageCircle className="w-5 h-5" />
             <span className="text-[10px] font-bold tracking-tight mt-0.5 whitespace-nowrap">WhatsApp</span>
@@ -294,21 +309,27 @@ export const MobileNavigation: React.FC = () => {
         </div>
       </nav>
 
-      {/* 3. INTERACTIVE BOTTOM SHEET / TOPIC DRAWER (Android & iOS Ergonomic Drawer) */}
+      {/* INTERACTIVE BOTTOM SHEET / TOPIC DRAWER (Android & iOS Ergonomic Drawer) */}
       {sheetOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-slate-950/60 backdrop-blur-xs"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-slate-950/65 backdrop-blur-xs"
           role="dialog"
           aria-modal="true"
           aria-label="Navegação por Tópicos e Seções"
+          onClick={() => setSheetOpen(false)}
         >
-          <div className="bg-white w-full sm:max-w-lg rounded-t-3xl sm:rounded-2xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+          <div
+            className="bg-white w-full sm:max-w-lg rounded-t-3xl sm:rounded-2xl max-h-[86vh] flex flex-col shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Drag Handle & Sheet Header */}
-            <div className="pt-2.5 pb-3 px-5 border-b border-slate-200 bg-white sticky top-0 z-10">
-              <div className="w-10 h-1.5 bg-slate-300 rounded-full mx-auto mb-3 sm:hidden" />
-              <div className="flex items-center justify-between">
+            <div className="pt-3 pb-3.5 px-5 border-b border-slate-200 bg-white sticky top-0 z-10">
+              <div className="w-11 h-1.5 bg-slate-300 rounded-full mx-auto mb-3 sm:hidden" />
+              <div className="flex items-center justify-between gap-3">
                 <div>
-                  <h2 className="text-base font-bold text-slate-950">Navegação Rápida por Tópicos</h2>
+                  <h2 className="text-base font-display font-extrabold text-slate-950">
+                    Navegação Rápida por Tópicos
+                  </h2>
                   <p className="text-xs text-slate-500">
                     Acesse qualquer seção ou guia para Android, iOS e Smart TV
                   </p>
@@ -316,7 +337,7 @@ export const MobileNavigation: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setSheetOpen(false)}
-                  className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100"
+                  className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-slate-500 hover:text-slate-900 bg-slate-100/80 hover:bg-slate-200/70 transition-colors"
                   aria-label="Fechar navegação por tópicos"
                 >
                   <X className="w-5 h-5" />
@@ -331,16 +352,16 @@ export const MobileNavigation: React.FC = () => {
                 <div className="text-xs font-bold uppercase tracking-wider text-orange-600 mb-2.5">
                   1. {pageLabel}
                 </div>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {topics.map((topic) => (
                     <button
                       key={topic.id}
                       type="button"
                       onClick={() => handleTopicClick(topic)}
-                      className="min-h-[44px] px-3 py-2.5 bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-orange-300 rounded-xl text-left text-xs font-semibold text-slate-800 flex items-center justify-between gap-2 transition-colors active:scale-[0.98]"
+                      className="min-h-[46px] px-3.5 py-2.5 bg-slate-50 hover:bg-orange-50/70 border border-slate-200/90 hover:border-orange-300 rounded-xl text-left text-xs font-semibold text-slate-800 flex items-center justify-between gap-2 transition-all active:scale-[0.98]"
                     >
-                      <span className="truncate">{topic.label}</span>
-                      <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <span className="line-clamp-1">{topic.label}</span>
+                      <ChevronRight className="w-4 h-4 text-slate-400 shrink-0" />
                     </button>
                   ))}
                 </div>
@@ -351,7 +372,7 @@ export const MobileNavigation: React.FC = () => {
                 <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">
                   2. Guias por Aparelho (Android, iOS e TV)
                 </div>
-                <div className="divide-y divide-slate-100 border border-slate-200 rounded-2xl overflow-hidden bg-white">
+                <div className="divide-y divide-slate-100 border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-2xs">
                   {[
                     {
                       label: 'Smart TV Android / Google TV',
@@ -384,10 +405,10 @@ export const MobileNavigation: React.FC = () => {
                         key={item.url}
                         to={item.url}
                         onClick={() => setSheetOpen(false)}
-                        className="flex items-center justify-between gap-3 px-4 py-3 hover:bg-slate-50 transition-colors min-h-[56px]"
+                        className="flex items-center justify-between gap-3 px-4 py-3.5 hover:bg-slate-50 transition-colors min-h-[58px]"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
+                          <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0">
                             <IconComponent className="w-4 h-4 text-orange-600" />
                           </div>
                           <div>
@@ -423,7 +444,7 @@ export const MobileNavigation: React.FC = () => {
                         key={page.path}
                         to={page.path}
                         onClick={() => setSheetOpen(false)}
-                        className="min-h-[44px] px-3 py-2.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl flex items-center gap-2 text-xs font-semibold text-slate-800"
+                        className="min-h-[46px] px-3 py-2.5 bg-slate-50 hover:bg-slate-100 border border-slate-200/90 rounded-xl flex items-center gap-2 text-xs font-semibold text-slate-800 active:scale-[0.98] transition-all"
                       >
                         <PageIcon className="w-4 h-4 text-orange-600 shrink-0" />
                         <span className="truncate">{page.label}</span>
@@ -439,7 +460,7 @@ export const MobileNavigation: React.FC = () => {
               <button
                 type="button"
                 onClick={scrollToTop}
-                className="min-h-[44px] px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-xs font-semibold text-slate-700 inline-flex items-center gap-1.5 shrink-0"
+                className="min-h-[46px] px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-700 inline-flex items-center gap-1.5 shrink-0 active:scale-[0.98]"
               >
                 <ArrowUp className="w-4 h-4" />
                 <span>Topo</span>
@@ -448,7 +469,7 @@ export const MobileNavigation: React.FC = () => {
                 href={getWhatsAppLink(getPageMessageKey())}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 min-h-[44px] px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold inline-flex items-center justify-center gap-2 shadow-sm"
+                className="flex-1 min-h-[46px] px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold inline-flex items-center justify-center gap-2 shadow-sm shadow-emerald-600/20 active:scale-[0.98]"
               >
                 <MessageCircle className="w-4 h-4 shrink-0" />
                 <span>Atendimento Rápido no WhatsApp</span>

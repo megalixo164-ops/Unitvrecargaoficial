@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, ChevronRight } from 'lucide-react';
 import { useSiteConfig } from '../context/ConfigContext';
 
 export const Header: React.FC = () => {
@@ -49,12 +49,19 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 sm:gap-8 px-4 sm:px-6 lg:px-8 h-16">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-[0_1px_3px_rgba(15,23,42,0.04)]">
+      {/* Subtle Top Brand Gradient Accent Line */}
+      <div
+        className="h-[2.5px] w-full bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600"
+        aria-hidden="true"
+      />
+
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 sm:gap-8 px-4 sm:px-6 lg:px-8 h-16">
         {/* Zone 1: Brand Title / Official Logo (single-line) */}
         <Link
           to="/"
-          className="flex items-center gap-2.5 text-xl font-extrabold tracking-tight text-slate-950 whitespace-nowrap shrink-0 min-h-[44px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 rounded-md"
+          onClick={() => setMobileMenuOpen(false)}
+          className="flex items-center gap-2.5 text-xl font-extrabold tracking-tight text-slate-950 whitespace-nowrap shrink-0 min-h-[44px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 rounded-lg"
           aria-label="UniTV Página Inicial"
         >
           <picture className="shrink-0">
@@ -70,21 +77,21 @@ export const Header: React.FC = () => {
               className="h-9 w-9 object-contain mix-blend-multiply"
             />
           </picture>
-          <span className="font-display">UniTV</span>
+          <span className="font-display text-xl tracking-tight">UniTV</span>
         </Link>
 
         {/* Zone 2: 5 Concise Single-Line Navigation Links */}
-        <nav aria-label="Navegação Principal" className="hidden md:flex items-center gap-7 text-sm font-medium">
+        <nav aria-label="Navegação Principal" className="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-medium">
           {primaryNavLinks.map((item) => {
             const active = isActive(item.path);
             return (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`whitespace-nowrap shrink-0 py-1 transition-colors border-b-2 ${
+                className={`whitespace-nowrap shrink-0 px-3.5 py-2 rounded-xl transition-all ${
                   active
-                    ? 'border-orange-600 text-slate-950 font-semibold'
-                    : 'border-transparent text-slate-600 hover:text-slate-950 hover:border-slate-300'
+                    ? 'bg-slate-950 text-white font-semibold shadow-xs'
+                    : 'text-slate-600 hover:text-slate-950 hover:bg-slate-100/80'
                 }`}
               >
                 {item.label}
@@ -99,17 +106,17 @@ export const Header: React.FC = () => {
             href={getWhatsAppLink(getPageMessageKey())}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 min-h-[42px] px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl transition-colors whitespace-nowrap shrink-0 shadow-xs active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+            className="inline-flex items-center justify-center gap-2 min-h-[42px] px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-all whitespace-nowrap shrink-0 shadow-sm shadow-emerald-600/20 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
           >
             <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
-            <span className="hidden xs:inline sm:inline">Atendimento WhatsApp</span>
-            <span className="xs:hidden sm:hidden">WhatsApp</span>
+            <span className="hidden sm:inline">Atendimento WhatsApp</span>
+            <span className="sm:hidden">WhatsApp</span>
           </a>
 
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2 rounded-xl text-slate-700 hover:text-slate-950 hover:bg-slate-100 transition-colors active:scale-[0.96]"
+            className="md:hidden inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2 rounded-xl text-slate-700 hover:text-slate-950 bg-slate-100/80 hover:bg-slate-200/70 transition-colors active:scale-[0.96]"
             aria-expanded={mobileMenuOpen}
             aria-label={mobileMenuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
           >
@@ -120,8 +127,8 @@ export const Header: React.FC = () => {
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-lg">
-          <div className="grid grid-cols-1 gap-1">
+        <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-2xl max-h-[calc(100vh-4.25rem)] overflow-y-auto">
+          <div className="grid grid-cols-1 gap-1.5">
             {allMobileLinks.map((item) => {
               const active = isActive(item.path);
               return (
@@ -129,16 +136,30 @@ export const Header: React.FC = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`min-h-[44px] flex items-center px-3.5 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                  className={`min-h-[48px] flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all active:scale-[0.99] ${
                     active
-                      ? 'bg-orange-50 text-orange-700 font-semibold'
-                      : 'text-slate-700 hover:bg-slate-50 hover:text-slate-950'
+                      ? 'bg-slate-950 text-white shadow-xs'
+                      : 'bg-slate-50/80 text-slate-800 hover:bg-slate-100 border border-slate-200/60'
                   }`}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  <ChevronRight className={`w-4 h-4 shrink-0 ${active ? 'text-orange-400' : 'text-slate-400'}`} />
                 </Link>
               );
             })}
+          </div>
+
+          <div className="pt-2">
+            <a
+              href={getWhatsAppLink(getPageMessageKey())}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full min-h-[48px] inline-flex items-center justify-center gap-2.5 px-5 py-3.5 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl shadow-md shadow-emerald-600/20 active:scale-[0.98]"
+            >
+              <MessageCircle className="w-4 h-4 shrink-0" />
+              <span>Falar com Suporte no WhatsApp</span>
+            </a>
           </div>
         </div>
       )}

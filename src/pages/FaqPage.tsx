@@ -95,16 +95,16 @@ export const FaqPage: React.FC = () => {
       <section id="faq-lista" className="py-14 lg:py-20 bg-white border-b border-slate-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Interactive Category Filter Buttons */}
-          <div className="flex flex-wrap items-center gap-2 p-1.5 bg-slate-100 rounded-xl border border-slate-200 mb-10">
+          <div className="flex items-center gap-2 p-1.5 bg-slate-100 rounded-xl border border-slate-200/90 mb-10 overflow-x-auto no-scrollbar max-w-full">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 type="button"
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3.5 py-2 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 ${
+                className={`min-h-[42px] px-4 py-2 text-xs font-bold rounded-lg transition-all whitespace-nowrap shrink-0 active:scale-[0.98] ${
                   selectedCategory === cat.id
                     ? 'bg-slate-950 text-white shadow-xs'
-                    : 'text-slate-700 hover:text-slate-950 hover:bg-white/60'
+                    : 'text-slate-700 hover:text-slate-950 hover:bg-white/70'
                 }`}
               >
                 {cat.label}

@@ -60,16 +60,20 @@ export const InstallationPage: React.FC = () => {
       />
 
       {/* Page Hero */}
-      <section className="bg-slate-950 text-white py-14 lg:py-20 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-[#030712] text-white py-12 sm:py-16 lg:py-20 border-b border-slate-800/90 overflow-hidden">
+        <div
+          className="pointer-events-none absolute -top-28 right-1/4 w-[460px] h-[460px] rounded-full bg-gradient-to-tr from-orange-600/15 via-rose-600/15 to-purple-600/15 blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Breadcrumbs items={breadcrumbs} dark />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
-              <div className="text-xs font-semibold text-orange-400">
+              <div className="text-xs font-bold uppercase tracking-wider text-orange-400">
                 Central de Instalação Passo a Passo · Tutoriais por Dispositivo
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight leading-tight">
                 Como Instalar a UniTV no seu Aparelho
               </h1>
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
@@ -83,7 +87,7 @@ export const InstallationPage: React.FC = () => {
                 href={getWhatsAppLink('installation')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-colors shadow-lg whitespace-nowrap"
+                className="w-full sm:w-auto min-h-[52px] inline-flex items-center justify-center gap-2.5 px-6 py-4 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-all shadow-lg shadow-emerald-600/25 active:scale-[0.98] whitespace-nowrap"
               >
                 <MessageCircle className="w-5 h-5 shrink-0" />
                 <span>Pedir Ajuda para Instalar no WhatsApp</span>
@@ -94,14 +98,14 @@ export const InstallationPage: React.FC = () => {
       </section>
 
       {/* Interactive Device Tutorial Section */}
-      <section className="py-14 lg:py-20 bg-white border-b border-slate-200">
+      <section className="py-14 lg:py-20 bg-white border-b border-slate-200/90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Interactive Segmented Selector (Allowed per Frontend Design Rule 1.A) */}
+          {/* Interactive Segmented Selector (Horizontally scrollable on mobile for zero overflow) */}
           <div className="mb-10">
-            <div className="text-xs font-semibold text-slate-500 mb-3">
+            <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
               Escolha seu aparelho para abrir o tutorial correspondente:
             </div>
-            <div className="flex flex-wrap items-center gap-2 p-1.5 bg-slate-100 rounded-xl border border-slate-200">
+            <div className="flex items-center gap-2 p-1.5 bg-slate-100 rounded-xl border border-slate-200/90 overflow-x-auto no-scrollbar max-w-full">
               {DEVICE_GUIDES.map((device) => {
                 const isSelected = device.id === selectedDeviceId;
                 return (
@@ -109,10 +113,10 @@ export const InstallationPage: React.FC = () => {
                     key={device.id}
                     type="button"
                     onClick={() => handleSelectDevice(device.id)}
-                    className={`px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 ${
+                    className={`min-h-[44px] px-4 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all whitespace-nowrap shrink-0 active:scale-[0.98] ${
                       isSelected
                         ? 'bg-slate-950 text-white shadow-xs'
-                        : 'text-slate-700 hover:text-slate-950 hover:bg-white/60'
+                        : 'text-slate-700 hover:text-slate-950 hover:bg-white/70'
                     }`}
                   >
                     {device.shortName}
@@ -123,12 +127,16 @@ export const InstallationPage: React.FC = () => {
           </div>
 
           {/* Active Device Guide Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             {/* Left Column: Step-by-Step Instructions (8 cols) */}
             <div className="lg:col-span-8 space-y-6">
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-4">
+              <div className="relative bg-slate-50/90 border border-slate-200/90 rounded-2xl p-6 sm:p-8 space-y-4 overflow-hidden shadow-2xs">
+                <div
+                  className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600"
+                  aria-hidden="true"
+                />
                 <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                  <span className="font-semibold text-orange-600">{activeGuide.compatibilityStatus}</span>
+                  <span className="font-bold text-orange-600">{activeGuide.compatibilityStatus}</span>
                   <span aria-hidden="true">·</span>
                   <span>Tempo estimado: {activeGuide.estimatedTime}</span>
                   <span aria-hidden="true">·</span>
@@ -146,17 +154,19 @@ export const InstallationPage: React.FC = () => {
                 {activeGuide.steps.map((step) => (
                   <div
                     key={step.stepNumber}
-                    className="bg-white border border-slate-200 rounded-2xl p-6 space-y-3"
+                    className="bg-white border border-slate-200/90 rounded-2xl p-5 sm:p-6 space-y-3 shadow-2xs hover:shadow-md transition-all"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="font-mono-tabular text-xs font-bold text-white bg-slate-900 px-2.5 py-1 rounded-md">
+                      <span className="font-mono-tabular text-xs font-extrabold text-white bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600 px-2.5 py-1 rounded-lg shrink-0 shadow-xs">
                         PASSO {step.stepNumber}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-950">{step.title}</h3>
+                      <h3 className="text-base sm:text-lg font-display font-extrabold text-slate-950">
+                        {step.title}
+                      </h3>
                     </div>
                     <p className="text-sm text-slate-600 leading-relaxed">{step.description}</p>
                     {step.tip && (
-                      <div className="p-3.5 bg-slate-50 border border-slate-200/80 rounded-xl flex items-start gap-2.5 text-xs text-slate-700">
+                      <div className="p-3.5 bg-orange-50/60 border border-orange-200/80 rounded-xl flex items-start gap-2.5 text-xs text-slate-800">
                         <Info className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
                         <span>
                           <strong>Dica técnica:</strong> {step.tip}
