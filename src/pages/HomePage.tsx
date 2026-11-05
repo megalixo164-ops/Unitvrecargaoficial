@@ -139,21 +139,27 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Right Column: Official Identity & Interactive Device Preview (5 cols) */}
-            <div className="lg:col-span-5 flex flex-col justify-between bg-slate-900/90 border border-slate-800 rounded-2xl p-6">
+            <div className="lg:col-span-5 flex flex-col justify-between bg-slate-900/90 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-2xl">
               {/* Interactive Mode Switcher */}
-              <div className="flex items-center justify-between gap-4 pb-4 border-b border-slate-800">
-                <div className="flex items-center gap-3">
+              <div className="flex items-center justify-between gap-3 pb-3.5 border-b border-slate-800">
+                <div className="flex items-center gap-2.5">
                   <div className="bg-white p-1.5 rounded-lg shrink-0">
-                    <img
-                      src={config.officialLogoUrl}
-                      alt="Logotipo UniTV"
-                      className="h-7 w-auto object-contain"
-                      referrerPolicy="no-referrer"
-                    />
+                    <picture>
+                      <source srcSet="/assets/images/logo_unitv.webp" type="image/webp" />
+                      <img
+                        src={config.officialLogoUrl}
+                        alt="Logotipo UniTV"
+                        width={28}
+                        height={28}
+                        loading="eager"
+                        decoding="async"
+                        className="h-7 w-7 object-contain"
+                      />
+                    </picture>
                   </div>
                   <div>
                     <div className="text-sm font-bold text-white">Interface UniTV</div>
-                    <div className="text-xs text-slate-400">Navegação otimizada para o seu aparelho</div>
+                    <div className="text-xs text-slate-400">Navegação otimizada para TV e Celular</div>
                   </div>
                 </div>
 
@@ -183,53 +189,78 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
+              {/* Official App Interface Preview Image (Optimized WebP + Responsive Mobile/Desktop) */}
+              <div className="mt-4 relative rounded-xl overflow-hidden border border-slate-800 bg-slate-950 shadow-inner">
+                <picture className="block w-full">
+                  <source
+                    media="(max-width: 640px)"
+                    srcSet="/assets/images/previa_interface_unitv_mobile.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet="/assets/images/previa_interface_unitv.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/assets/aistudio/Pr_via_Neon_do_App_UniTV_71255ce8.png"
+                    alt="Prévia oficial da interface do aplicativo UniTV na Smart TV, TV Box e no Celular Android"
+                    width={1200}
+                    height={794}
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
+                    className="w-full h-auto object-cover block"
+                  />
+                </picture>
+              </div>
+
               {/* Visual Diagram of the Platform Experience */}
-              <div className="my-5 bg-slate-950 border border-slate-800/90 rounded-xl p-5 space-y-4">
+              <div className="mt-4 bg-slate-950 border border-slate-800/90 rounded-xl p-4 space-y-3">
                 {previewMode === 'tv' ? (
                   <>
-                    <div className="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-3">
+                    <div className="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-2.5">
                       <span className="font-semibold text-slate-200">
                         Smart TV Android · TV Box · Fire TV Stick
                       </span>
                       <span className="font-mono-tabular text-orange-400">Controle Remoto</span>
                     </div>
-                    <div className="grid grid-cols-3 gap-2.5">
-                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-3">
-                        <div className="text-xs font-semibold text-white mb-1">Categorias</div>
-                        <p className="text-[11px] text-slate-400">Menu lateral organizado para acesso rápido</p>
+                    <div className="grid grid-cols-3 gap-2">
+                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-2.5">
+                        <div className="text-xs font-semibold text-white mb-0.5">Categorias</div>
+                        <p className="text-[11px] text-slate-400">TV, Filmes, Séries, Kids e Anime</p>
                       </div>
-                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-3">
-                        <div className="text-xs font-semibold text-white mb-1">Busca Global</div>
-                        <p className="text-[11px] text-slate-400">Pesquisa instantânea pelas iniciais</p>
+                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-2.5">
+                        <div className="text-xs font-semibold text-white mb-0.5">Busca Global</div>
+                        <p className="text-[11px] text-slate-400">Pesquisa instantânea na tela</p>
                       </div>
-                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-3">
-                        <div className="text-xs font-semibold text-white mb-1">Recarga Fácil</div>
-                        <p className="text-[11px] text-slate-400">Ativação direta por código de 16 dígitos</p>
+                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-2.5">
+                        <div className="text-xs font-semibold text-white mb-0.5">Recarga Fácil</div>
+                        <p className="text-[11px] text-slate-400">Código de 16 dígitos no perfil</p>
                       </div>
                     </div>
                   </>
                 ) : (
                   <>
-                    <div className="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-3">
+                    <div className="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-2.5">
                       <span className="font-semibold text-slate-200">
                         Smartphones e Tablets Android (6.0+)
                       </span>
                       <span className="font-mono-tabular text-orange-400">Touchscreen</span>
                     </div>
-                    <div className="grid grid-cols-2 gap-2.5">
-                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-3">
-                        <div className="text-xs font-semibold text-white mb-1">Toque Intuitivo</div>
-                        <p className="text-[11px] text-slate-400">Layout exclusivo adaptado para telas móveis</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-2.5">
+                        <div className="text-xs font-semibold text-white mb-0.5">Toque Intuitivo</div>
+                        <p className="text-[11px] text-slate-400">Abas Início, TV, Filmes e Perfil no celular</p>
                       </div>
-                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-3">
-                        <div className="text-xs font-semibold text-white mb-1">Conta Vinculada</div>
+                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-2.5">
+                        <div className="text-xs font-semibold text-white mb-0.5">Conta Vinculada</div>
                         <p className="text-[11px] text-slate-400">Sincronize favoritos e validade no perfil</p>
                       </div>
                     </div>
                   </>
                 )}
 
-                <div className="pt-2 flex items-center justify-between text-xs text-slate-400">
+                <div className="pt-1 flex items-center justify-between text-xs text-slate-400">
                   <span>Conexão recomendada: 15 a 30 Mbps</span>
                   <Link
                     to="/como-instalar"
@@ -242,7 +273,7 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Bottom Trust Footer inside Hero Card */}
-              <div className="flex items-center justify-between gap-4 pt-2 text-xs text-slate-400">
+              <div className="flex items-center justify-between gap-4 pt-3 text-xs text-slate-400">
                 <span>Dúvida se sua TV é compatível?</span>
                 <Link
                   to="/dispositivos-compativeis"
@@ -514,80 +545,124 @@ export const HomePage: React.FC = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {config.plans.map((plan) => (
               <div
                 key={plan.id}
-                className={`rounded-2xl p-6 flex flex-col justify-between transition-all ${
+                className={`group relative rounded-2xl transition-all duration-300 flex flex-col ${
                   plan.featured
-                    ? 'bg-slate-950 text-white border-2 border-orange-500 shadow-xl'
-                    : 'bg-slate-50 text-slate-900 border border-slate-200'
+                    ? 'p-[2px] bg-gradient-to-br from-orange-500 via-rose-500 to-purple-600 shadow-2xl shadow-orange-500/20 lg:-translate-y-2'
+                    : 'p-[1.5px] bg-gradient-to-br from-orange-500/40 via-rose-500/35 to-purple-600/40 hover:from-orange-500 hover:via-rose-500 hover:to-purple-600 shadow-md hover:shadow-xl hover:-translate-y-1'
                 }`}
               >
-                <div>
-                  <div className="flex items-center justify-between gap-2 text-xs mb-3">
-                    <span className={plan.featured ? 'text-orange-400 font-semibold' : 'text-slate-500 font-medium'}>
-                      {plan.periodLabel}
-                    </span>
-                    {plan.savingsLabel && (
-                      <span className={plan.featured ? 'text-emerald-400 font-medium' : 'text-emerald-700 font-medium'}>
-                        {plan.savingsLabel}
-                      </span>
-                    )}
-                  </div>
+                <div
+                  className={`relative rounded-[14px] h-full p-6 flex flex-col justify-between overflow-hidden ${
+                    plan.featured ? 'bg-slate-950 text-white' : 'bg-white text-slate-900'
+                  }`}
+                >
+                  {/* Top UniTV Logo Gradient Bar */}
+                  <div
+                    className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600"
+                    aria-hidden="true"
+                  />
 
-                  <h3 className={`text-xl font-bold ${plan.featured ? 'text-white' : 'text-slate-950'}`}>
-                    {plan.name}
-                  </h3>
+                  {/* Subtle ambient logo glow inside card */}
+                  <div
+                    className={`pointer-events-none absolute -top-16 -right-16 w-36 h-36 rounded-full bg-gradient-to-br from-orange-500/20 via-rose-500/15 to-purple-600/20 blur-2xl ${
+                      plan.featured ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'
+                    } transition-opacity`}
+                    aria-hidden="true"
+                  />
 
-                  <div className="mt-4 pb-4 border-b border-slate-200/20">
-                    <div
-                      className={`text-3xl font-extrabold font-mono-tabular ${
-                        plan.featured ? 'text-white' : 'text-slate-950'
-                      }`}
-                    >
-                      {plan.price}
-                    </div>
-                    {plan.equivalentMonthly && (
-                      <div className={`text-xs mt-1 ${plan.featured ? 'text-slate-400' : 'text-slate-500'}`}>
-                        {plan.equivalentMonthly}
+                  <div className="relative z-10">
+                    {plan.featured && (
+                      <div className="mb-3 inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-rose-400 to-purple-400">
+                        <span>★ Mais Escolhido · Melhor Custo-Benefício</span>
                       </div>
                     )}
+
+                    <div className="flex items-center justify-between gap-2 text-xs mb-2.5">
+                      <span
+                        className={
+                          plan.featured
+                            ? 'text-orange-300 font-semibold'
+                            : 'text-slate-600 font-semibold'
+                        }
+                      >
+                        {plan.periodLabel}
+                      </span>
+                      {plan.savingsLabel && (
+                        <span
+                          className={
+                            plan.featured
+                              ? 'text-emerald-400 font-semibold'
+                              : 'text-emerald-700 font-semibold'
+                          }
+                        >
+                          {plan.savingsLabel}
+                        </span>
+                      )}
+                    </div>
+
+                    <h3 className={`text-xl font-display font-extrabold ${plan.featured ? 'text-white' : 'text-slate-950'}`}>
+                      {plan.name}
+                    </h3>
+
+                    <div
+                      className={`mt-4 pb-4 border-b ${
+                        plan.featured ? 'border-slate-800' : 'border-slate-200'
+                      }`}
+                    >
+                      <div
+                        className={`text-3xl sm:text-4xl font-extrabold font-mono-tabular tracking-tight ${
+                          plan.featured
+                            ? 'text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-rose-400 to-amber-200'
+                            : 'text-slate-950'
+                        }`}
+                      >
+                        {plan.price}
+                      </div>
+                      {plan.equivalentMonthly && (
+                        <div className={`text-xs mt-1 font-medium ${plan.featured ? 'text-slate-300' : 'text-slate-500'}`}>
+                          {plan.equivalentMonthly}
+                        </div>
+                      )}
+                    </div>
+
+                    <p className={`mt-4 text-xs leading-relaxed ${plan.featured ? 'text-slate-300' : 'text-slate-600'}`}>
+                      {plan.description}
+                    </p>
+
+                    <ul className="mt-5 space-y-2.5">
+                      {plan.features.map((feat, idx) => (
+                        <li key={idx} className="flex items-start gap-2.5 text-xs">
+                          <span
+                            className="w-4 h-4 rounded-full bg-gradient-to-br from-orange-500 via-rose-500 to-purple-600 flex items-center justify-center shrink-0 mt-0.5 shadow-xs"
+                            aria-hidden="true"
+                          >
+                            <Check className="w-2.5 h-2.5 text-white stroke-[3]" />
+                          </span>
+                          <span className={plan.featured ? 'text-slate-200' : 'text-slate-700'}>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  <p className={`mt-4 text-xs leading-relaxed ${plan.featured ? 'text-slate-300' : 'text-slate-600'}`}>
-                    {plan.description}
-                  </p>
-
-                  <ul className="mt-5 space-y-2.5">
-                    {plan.features.map((feat, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-xs">
-                        <Check
-                          className={`w-4 h-4 shrink-0 mt-0.5 ${
-                            plan.featured ? 'text-orange-400' : 'text-emerald-600'
-                          }`}
-                          aria-hidden="true"
-                        />
-                        <span className={plan.featured ? 'text-slate-200' : 'text-slate-700'}>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-8 pt-4">
-                  <a
-                    href={buildWhatsAppUrl(config.whatsapp.rawNumber, plan.whatsappMessage)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`w-full inline-flex items-center justify-center gap-2 px-4 py-3 text-xs sm:text-sm font-bold rounded-xl transition-colors whitespace-nowrap ${
-                      plan.featured
-                        ? 'bg-orange-600 hover:bg-orange-500 text-white'
-                        : 'bg-slate-900 hover:bg-slate-800 text-white'
-                    }`}
-                  >
-                    <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
-                    <span>Solicitar {plan.name}</span>
-                  </a>
+                  <div className="mt-8 pt-4 relative z-10">
+                    <a
+                      href={buildWhatsAppUrl(config.whatsapp.rawNumber, plan.whatsappMessage)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full inline-flex items-center justify-center gap-2 px-4 py-3.5 text-xs sm:text-sm font-bold rounded-xl transition-all whitespace-nowrap shadow-md active:scale-[0.98] ${
+                        plan.featured
+                          ? 'bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600 hover:from-orange-400 hover:via-rose-400 hover:to-purple-500 text-white shadow-orange-500/25'
+                          : 'bg-slate-950 hover:bg-gradient-to-r hover:from-orange-500 hover:via-rose-500 hover:to-purple-600 text-white'
+                      }`}
+                    >
+                      <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
+                      <span>Solicitar {plan.name}</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
