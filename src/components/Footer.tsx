@@ -14,12 +14,18 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand & Commercial Identity (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <Link to="/" className="inline-flex items-center gap-3 bg-white px-3.5 py-2 rounded-xl">
-              <img
-                src={config.officialLogoUrl}
-                alt="Logotipo Oficial UniTV"
-                className="h-8 w-auto object-contain"
-                referrerPolicy="no-referrer"
-              />
+              <picture className="shrink-0">
+                <source srcSet="/assets/images/logo_unitv.webp" type="image/webp" />
+                <img
+                  src={config.officialLogoUrl}
+                  alt="Logotipo Oficial UniTV"
+                  width={32}
+                  height={32}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-8 w-8 object-contain"
+                />
+              </picture>
               <span className="font-display font-extrabold text-lg text-slate-950 tracking-tight">
                 UniTV
               </span>

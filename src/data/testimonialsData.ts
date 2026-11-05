@@ -21,7 +21,7 @@ export const CUSTOMER_TESTIMONIALS: CustomerTestimonial[] = [
     deviceUsed: 'Smart TV TCL 55" (Google TV)',
     planUsed: 'Plano Trimestral',
     category: 'atendimento',
-    avatarUrl: '/src/assets/images/avatar_carlos_sc_1793827874582.jpg',
+    avatarUrl: '/assets/images/avatar_carlos_sc_1793827874582.jpg',
     rating: 5,
     dateLabel: 'Há 2 dias',
     comment:
@@ -35,7 +35,7 @@ export const CUSTOMER_TESTIMONIALS: CustomerTestimonial[] = [
     deviceUsed: 'Fire TV Stick na TV Samsung',
     planUsed: 'Plano Anual',
     category: 'instalacao',
-    avatarUrl: '/src/assets/images/avatar_fernanda_pr_1793827876128.jpg',
+    avatarUrl: '/assets/images/avatar_fernanda_pr_1793827876128.jpg',
     rating: 5,
     dateLabel: 'Há 4 dias',
     comment:
@@ -49,7 +49,7 @@ export const CUSTOMER_TESTIMONIALS: CustomerTestimonial[] = [
     deviceUsed: 'TV Box Xiaomi Mi Box S',
     planUsed: 'Plano Anual',
     category: 'app',
-    avatarUrl: '/src/assets/images/avatar_marcos_sp_1793827882092.jpg',
+    avatarUrl: '/assets/images/avatar_marcos_sp_1793827882092.jpg',
     rating: 5,
     dateLabel: 'Há 1 semana',
     comment:
@@ -63,7 +63,7 @@ export const CUSTOMER_TESTIMONIALS: CustomerTestimonial[] = [
     deviceUsed: 'Smart TV Philips Android + Celular',
     planUsed: 'Plano Semestral',
     category: 'app',
-    avatarUrl: '/src/assets/images/avatar_juliana_mg_1793827885282.jpg',
+    avatarUrl: '/assets/images/avatar_juliana_mg_1793827885282.jpg',
     rating: 5,
     dateLabel: 'Há 1 semana',
     comment:
@@ -77,7 +77,7 @@ export const CUSTOMER_TESTIMONIALS: CustomerTestimonial[] = [
     deviceUsed: 'TV Box Aquário na TV LG',
     planUsed: 'Plano Trimestral',
     category: 'instalacao',
-    avatarUrl: '/src/assets/images/avatar_roberto_rs_1793827880388.jpg',
+    avatarUrl: '/assets/images/avatar_roberto_rs_1793827880388.jpg',
     rating: 5,
     dateLabel: 'Há 2 semanas',
     comment:
@@ -91,7 +91,7 @@ export const CUSTOMER_TESTIMONIALS: CustomerTestimonial[] = [
     deviceUsed: 'Amazon Fire TV Stick 4K',
     planUsed: 'Plano Semestral',
     category: 'atendimento',
-    avatarUrl: '/src/assets/images/avatar_patricia_sc_1793827881587.jpg',
+    avatarUrl: '/assets/images/avatar_patricia_sc_1793827881587.jpg',
     rating: 5,
     dateLabel: 'Há 2 semanas',
     comment:
@@ -105,7 +105,7 @@ export const CUSTOMER_TESTIMONIALS: CustomerTestimonial[] = [
     deviceUsed: 'Smart TV Philco Android + TV Box',
     planUsed: 'Plano Trimestral',
     category: 'app',
-    avatarUrl: '/src/assets/images/avatar_anderson_rj_1793827881947.jpg',
+    avatarUrl: '/assets/images/avatar_anderson_rj_1793827881947.jpg',
     rating: 5,
     dateLabel: 'Há 3 semanas',
     comment:
@@ -119,7 +119,7 @@ export const CUSTOMER_TESTIMONIALS: CustomerTestimonial[] = [
     deviceUsed: 'Smart TV Sony Bravia Android',
     planUsed: 'Plano Mensal',
     category: 'atendimento',
-    avatarUrl: '/src/assets/images/avatar_camila_go_1793827882906.jpg',
+    avatarUrl: '/assets/images/avatar_camila_go_1793827882906.jpg',
     rating: 5,
     dateLabel: 'Há 3 semanas',
     comment:
@@ -133,7 +133,7 @@ export const CUSTOMER_TESTIMONIALS: CustomerTestimonial[] = [
     deviceUsed: 'Chromecast com Google TV 4K',
     planUsed: 'Plano Anual',
     category: 'app',
-    avatarUrl: '/src/assets/images/avatar_eduardo_sp_1793827884650.jpg',
+    avatarUrl: '/assets/images/avatar_eduardo_sp_1793827884650.jpg',
     rating: 5,
     dateLabel: 'Há 1 mês',
     comment:
@@ -147,7 +147,7 @@ export const CUSTOMER_TESTIMONIALS: CustomerTestimonial[] = [
     deviceUsed: 'Fire TV Stick na Smart TV LG',
     planUsed: 'Plano Trimestral',
     category: 'instalacao',
-    avatarUrl: '/src/assets/images/avatar_luciana_ba_1793827884819.jpg',
+    avatarUrl: '/assets/images/avatar_luciana_ba_1793827884819.jpg',
     rating: 5,
     dateLabel: 'Há 1 mês',
     comment:

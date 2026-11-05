@@ -53,7 +53,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: '6 min de leitura',
     excerpt:
       'Entenda a arquitetura de funcionamento da UniTV, desde os requisitos de internet e aparelhos Android compatíveis até o sistema de recarga e navegação por categorias.',
-    coverImage: '/src/assets/images/blog_unitv_app_1793827137959.jpg',
+    coverImage: '/assets/images/blog_unitv_app_1793827137959.jpg',
     coverAlt: 'Interface do aplicativo UniTV em funcionamento em uma Smart TV 4K na sala de estar',
     visualTheme: 'orange',
     iconType: 'play',
@@ -136,7 +136,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: '5 min de leitura',
     excerpt:
       'Procurando por UniTV teste grátis? Liberamos 3 dias grátis para novos usuários! Entenda como funciona em novos dispositivos Android e como instalar o app.',
-    coverImage: '/src/assets/images/blog_unitv_trial_1793827139654.jpg',
+    coverImage: '/assets/images/blog_unitv_trial_1793827139654.jpg',
     coverAlt: 'Usuário testando o aplicativo UniTV na Smart TV com controle remoto durante avaliação inicial',
     visualTheme: 'emerald',
     iconType: 'gift',
@@ -225,7 +225,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: '7 min de leitura',
     excerpt:
       'Confira o tutorial detalhado para baixar e instalar a UniTV na sua Smart TV com Android TV ou Google TV usando o aplicativo Downloader ou pendrive USB.',
-    coverImage: '/src/assets/images/blog_smart_tv_1793827140047.jpg',
+    coverImage: '/assets/images/blog_smart_tv_1793827140047.jpg',
     coverAlt: 'Instalação do aplicativo UniTV concluída em uma Smart TV Android ao lado de TV Box e Fire TV Stick',
     visualTheme: 'blue',
     iconType: 'tv',
@@ -299,7 +299,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: '5 min de leitura',
     excerpt:
       'Tem uma Smart TV Samsung e quer saber como instalar a UniTV? Explicamos com transparência técnica como funciona o sistema Tizen e qual a solução ideal.',
-    coverImage: '/src/assets/images/blog_samsung_lg_1793827141493.jpg',
+    coverImage: '/assets/images/blog_samsung_lg_1793827141493.jpg',
     coverAlt: 'Smart TV Samsung conectada a um aparelho Fire TV Stick e TV Box exibindo o aplicativo UniTV',
     visualTheme: 'blue',
     iconType: 'tv',
@@ -363,7 +363,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: '5 min de leitura',
     excerpt:
       'Descubra por que as TVs LG utilizam o sistema WebOS e qual é a maneira correta, segura e estável de utilizar a UniTV na sua televisão LG.',
-    coverImage: '/src/assets/images/blog_samsung_lg_1793827141493.jpg',
+    coverImage: '/assets/images/blog_samsung_lg_1793827141493.jpg',
     coverAlt: 'Smart TV LG utilizando o aplicativo UniTV por meio de dispositivo Android HDMI conectado',
     visualTheme: 'purple',
     iconType: 'tv',
@@ -426,7 +426,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: '5 min de leitura',
     excerpt:
       'Já instalou o aplicativo e adquiriu seu plano? Veja como inserir seu código de recarga de 16 dígitos ou vincular sua conta para ativar a UniTV na hora.',
-    coverImage: '/src/assets/images/blog_unitv_recarga_1793827142655.jpg',
+    coverImage: '/assets/images/blog_unitv_recarga_1793827142655.jpg',
     coverAlt: 'Tela de perfil e assinatura ativa no aplicativo UniTV no celular Android e na Smart TV',
     visualTheme: 'orange',
     iconType: 'key',
@@ -496,7 +496,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: '4 min de leitura',
     excerpt:
       'Saiba como renovar sua assinatura pré-paga da UniTV em poucos minutos pelo WhatsApp sem precisar reinstalar o aplicativo.',
-    coverImage: '/src/assets/images/blog_unitv_recarga_1793827142655.jpg',
+    coverImage: '/assets/images/blog_unitv_recarga_1793827142655.jpg',
     coverAlt: 'Renovação de assinatura do aplicativo UniTV exibida na tela do smartphone e televisão',
     visualTheme: 'emerald',
     iconType: 'refresh',
@@ -559,7 +559,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: '6 min de leitura',
     excerpt:
       'Uma análise técnica e objetiva sobre os recursos da plataforma UniTV: navegação por controle remoto, adaptação de qualidade de vídeo, controle parental e suporte.',
-    coverImage: '/src/assets/images/blog_unitv_app_1793827137959.jpg',
+    coverImage: '/assets/images/blog_unitv_app_1793827137959.jpg',
     coverAlt: 'Catálogo e recursos do aplicativo UniTV organizados por categorias em uma Smart TV',
     visualTheme: 'purple',
     iconType: 'shield',
@@ -624,7 +624,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: '6 min de leitura',
     excerpt:
       'Veja exatamente em quais aparelhos você pode instalar a UniTV nativamente e quais requisitos mínimos de sistema e internet são recomendados.',
-    coverImage: '/src/assets/images/blog_smart_tv_1793827140047.jpg',
+    coverImage: '/assets/images/blog_smart_tv_1793827140047.jpg',
     coverAlt: 'Dispositivos compatíveis com a UniTV: Smart TV Android, TV Box, Fire TV Stick e controles remotos',
     visualTheme: 'blue',
     iconType: 'smartphone',
@@ -686,7 +686,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: '5 min de leitura',
     excerpt:
       'Quer adquirir a UniTV com tranquilidade e suporte humano passo a passo? Veja como escolher seu plano ideal e receber seu código de ativação pelo WhatsApp.',
-    coverImage: '/src/assets/images/blog_unitv_trial_1793827139654.jpg',
+    coverImage: '/assets/images/blog_unitv_trial_1793827139654.jpg',
     coverAlt: 'Ativação e escolha de planos no aplicativo oficial da UniTV na televisão',
     visualTheme: 'orange',
     iconType: 'check',

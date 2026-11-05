@@ -46,14 +46,19 @@ export const BlogArticleVisual: React.FC<{ post: BlogPost; heightClass?: string 
       className={`group w-full ${heightClass} rounded-xl bg-gradient-to-br ${themeGradients[post.visualTheme]} border overflow-hidden relative flex flex-col justify-between`}
     >
       {!imgError && post.coverImage && (
-        <img
-          src={post.coverImage}
-          alt={post.coverAlt}
-          loading="lazy"
-          referrerPolicy="no-referrer"
-          onError={() => setImgError(true)}
-          className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
-        />
+        <picture className="absolute inset-0 w-full h-full block">
+          <source srcSet={post.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
+          <img
+            src={post.coverImage}
+            alt={post.coverAlt}
+            width={800}
+            height={450}
+            loading="lazy"
+            decoding="async"
+            onError={() => setImgError(true)}
+            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+          />
+        </picture>
       )}
 
       {/* Measured contrast scrim for text legibility */}

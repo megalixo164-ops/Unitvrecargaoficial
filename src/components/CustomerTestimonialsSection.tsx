@@ -7,7 +7,11 @@ interface CustomerTestimonialsSectionProps {
   showAllByDefault?: boolean;
 }
 
-const CustomerAvatar: React.FC<{ name: string; avatarUrl: string }> = ({ name, avatarUrl }) => {
+const CustomerAvatar: React.FC<{ name: string; avatarUrl: string; priority?: boolean }> = ({
+  name,
+  avatarUrl,
+  priority = false,
+}) => {
   const [imgError, setImgError] = useState(false);
   const initials = name
     .split(' ')
@@ -15,17 +19,25 @@ const CustomerAvatar: React.FC<{ name: string; avatarUrl: string }> = ({ name, a
     .map((n) => n[0])
     .join('');
 
+  const webpUrl = avatarUrl.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+
   return (
     <div className="w-12 h-12 rounded-full overflow-hidden bg-slate-200 border border-slate-300 shrink-0 flex items-center justify-center">
       {!imgError ? (
-        <img
-          src={avatarUrl}
-          alt={`Foto de perfil de ${name}`}
-          loading="lazy"
-          referrerPolicy="no-referrer"
-          onError={() => setImgError(true)}
-          className="w-full h-full object-cover object-center"
-        />
+        <picture className="w-full h-full block">
+          <source srcSet={webpUrl} type="image/webp" />
+          <img
+            src={avatarUrl}
+            alt={`Foto de perfil de ${name}`}
+            width={48}
+            height={48}
+            loading={priority ? 'eager' : 'lazy'}
+            decoding="async"
+            fetchPriority={priority ? 'high' : 'auto'}
+            onError={() => setImgError(true)}
+            className="w-full h-full object-cover object-center"
+          />
+        </picture>
       ) : (
         <span className="text-sm font-bold text-slate-700">{initials}</span>
       )}
@@ -124,7 +136,7 @@ export const CustomerTestimonialsSection: React.FC<CustomerTestimonialsSectionPr
 
         {/* 10 Customer Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {displayedTestimonials.map((item) => (
+          {displayedTestimonials.map((item, idx) => (
             <article
               key={item.id}
               className="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-300 transition-colors"
@@ -133,7 +145,7 @@ export const CustomerTestimonialsSection: React.FC<CustomerTestimonialsSectionPr
                 {/* Header: Profile Photo, Name, City/State & Stars */}
                 <div className="flex items-start justify-between gap-3 mb-4">
                   <div className="flex items-center gap-3.5">
-                    <CustomerAvatar name={item.name} avatarUrl={item.avatarUrl} />
+                    <CustomerAvatar name={item.name} avatarUrl={item.avatarUrl} priority={idx < 4} />
                     <div>
                       <div className="flex items-center gap-1.5">
                         <h3 className="text-sm sm:text-base font-bold text-slate-950">{item.name}</h3>

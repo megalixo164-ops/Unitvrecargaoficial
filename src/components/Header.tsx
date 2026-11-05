@@ -57,12 +57,19 @@ export const Header: React.FC = () => {
           className="flex items-center gap-2.5 text-xl font-extrabold tracking-tight text-slate-950 whitespace-nowrap shrink-0 min-h-[44px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 rounded-md"
           aria-label="UniTV Página Inicial"
         >
-          <img
-            src={config.officialLogoUrl}
-            alt="Logotipo Oficial UniTV"
-            className="h-9 w-auto object-contain mix-blend-multiply"
-            referrerPolicy="no-referrer"
-          />
+          <picture className="shrink-0">
+            <source srcSet="/assets/images/logo_unitv.webp" type="image/webp" />
+            <img
+              src={config.officialLogoUrl}
+              alt="Logotipo Oficial UniTV"
+              width={36}
+              height={36}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              className="h-9 w-9 object-contain mix-blend-multiply"
+            />
+          </picture>
           <span className="font-display">UniTV</span>
         </Link>
 

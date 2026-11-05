@@ -121,12 +121,19 @@ export const BlogPostPage: React.FC = () => {
               {/* Featured Article Cover Image */}
               <figure className="rounded-2xl overflow-hidden border border-slate-200 bg-slate-950 shadow-sm">
                 <div className="aspect-video w-full relative overflow-hidden">
-                  <img
-                    src={post.coverImage}
-                    alt={post.coverAlt}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover object-center"
-                  />
+                  <picture className="w-full h-full block">
+                    <source srcSet={post.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
+                    <img
+                      src={post.coverImage}
+                      alt={post.coverAlt}
+                      width={800}
+                      height={450}
+                      loading="eager"
+                      decoding="async"
+                      fetchPriority="high"
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </picture>
                 </div>
                 <figcaption className="px-4 py-2.5 bg-slate-50 border-t border-slate-200 text-xs text-slate-500">
                   {post.coverAlt}
