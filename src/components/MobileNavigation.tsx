@@ -57,17 +57,17 @@ export const MobileNavigation: React.FC = () => {
 
     if (path === '/') {
       return {
-        pageLabel: 'Tópicos da Página Inicial',
+        pageLabel: 'Atalhos da Página Inicial',
         topics: [
-          { id: 'top-inicio', label: 'Resumo', type: 'anchor', target: 'sec-hero' },
-          { id: 'top-recursos', label: 'O que é UniTV', type: 'anchor', target: 'sec-recursos' },
-          { id: 'top-teste', label: 'Teste 3 Dias Grátis', type: 'anchor', target: 'sec-teste-gratis' },
+          { id: 'top-inicio', label: 'Apresentação e Ofertas', type: 'anchor', target: 'sec-hero' },
           { id: 'top-planos', label: 'Planos e Preços', type: 'anchor', target: 'planos' },
-          { id: 'top-clientes', label: 'Clientes (+10 mil)', type: 'anchor', target: 'sec-clientes' },
-          { id: 'top-aparelhos', label: 'Aparelhos Compatíveis', type: 'anchor', target: 'sec-dispositivos' },
-          { id: 'top-passos', label: 'Como Começar', type: 'anchor', target: 'sec-como-funciona' },
-          { id: 'top-faq', label: 'Dúvidas (FAQ)', type: 'anchor', target: 'sec-faq' },
-          { id: 'top-blog', label: 'Artigos e Guias', type: 'anchor', target: 'sec-blog' },
+          { id: 'top-teste', label: 'Teste 3 Dias Grátis', type: 'anchor', target: 'sec-teste-gratis' },
+          { id: 'top-passos', label: 'Como Comprar e Ativar', type: 'anchor', target: 'sec-como-funciona' },
+          { id: 'top-instalar', label: 'Baixar por Aparelho', type: 'anchor', target: 'sec-instalacao-rapida' },
+          { id: 'top-dicas', label: 'Dicas e Vínculo de Conta', type: 'anchor', target: 'sec-dicas-uso' },
+          { id: 'top-clientes', label: 'Avaliações (+10 mil)', type: 'anchor', target: 'sec-clientes' },
+          { id: 'top-topicos', label: 'Central de Tópicos', type: 'anchor', target: 'sec-topicos' },
+          { id: 'top-faq', label: 'Dúvidas antes de Comprar', type: 'anchor', target: 'sec-faq' },
         ],
       };
     }

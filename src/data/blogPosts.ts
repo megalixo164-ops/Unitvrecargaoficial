@@ -737,4 +737,375 @@ export const BLOG_POSTS: BlogPost[] = [
     whatsappCustomMessage: 'Olá! Gostaria de adquirir um plano da UniTV.',
     relatedSlugs: ['como-ativar-unitv', 'como-renovar-unitv', 'como-conseguir-teste-gratis-da-unitv'],
   },
+  {
+    id: '11',
+    slug: 'unitv-ou-iptv-qual-melhor-para-assinar',
+    title: 'UniTV ou Lista IPTV / OpTV: Qual vale mais a pena assinar na TV e TV Box?',
+    seoTitle: 'UniTV ou IPTV / OpTV: Qual Vale Mais a Pena Assinar?',
+    metaDescription:
+      'Compare a UniTV com listas IPTV e OpTV comuns. Veja por que o aplicativo oficial UniTV não trava, tem teste grátis de 3 dias e planos de R$ 29,90.',
+    category: 'Avaliação e Recursos',
+    publishedAt: '2026-11-08',
+    updatedAt: '2026-11-08',
+    readingTime: '6 min de leitura',
+    excerpt:
+      'Está pesquisando para assinar IPTV, OpTV ou UniTV na sua Smart TV ou TV Box? Entenda a diferença técnica entre listas comuns e o aplicativo oficial da UniTV.',
+    coverImage: '/assets/images/previa_interface_unitv.jpg',
+    coverAlt: 'Comparativo entre o aplicativo oficial UniTV e reprodutores comuns de listas IPTV e OpTV na Smart TV',
+    visualTheme: 'orange',
+    iconType: 'play',
+    sections: [
+      {
+        id: 'diferenca-unitv-e-listas-iptv-optv',
+        heading: 'Qual a diferença entre a UniTV e listas IPTV / OpTV comuns?',
+        paragraphs: [
+          'Quem pesquisa no Google para assinar IPTV ou OpTV geralmente busca uma forma prática de assistir canais ao vivo, esportes, filmes e séries na Smart TV ou TV Box sem pagar faturas caras de TV a cabo tradicional. No entanto, existe uma grande diferença técnica entre contratar uma "lista M3U/IPTV genérica" e utilizar o aplicativo oficial da UniTV.',
+          'Listas IPTV ou OpTV tradicionais exigem que você baixe reprodutores de terceiros, configure URLs longas que expiram com frequência e sofra com listas desatualizadas. Já a UniTV possui um aplicativo próprio nativo para Android TV, TV Box, Fire TV Stick e Celular Android, com servidores otimizados e catálogo atualizado automaticamente todos os dias.',
+        ],
+        internalLink: {
+          text: 'Veja na prática Como Funciona a tecnologia da UniTV',
+          url: '/como-funciona',
+        },
+      },
+      {
+        id: 'vantagens-aplicativo-oficial-unitv',
+        heading: 'Por que quem procura IPTV ou OpTV está migrando para a UniTV?',
+        paragraphs: [
+          'Ao optar pelo ecossistema oficial da UniTV, você elimina a dor de cabeça de configurar listas manuais e ganha recursos exclusivos de estabilidade e facilidade de uso:',
+        ],
+        bullets: [
+          'Estabilidade superior com ajuste inteligente de rota: menor risco de travamentos em horários de pico e jogos ao vivo.',
+          'Interface moderna estilo cinema: capas organizadas, busca rápida por voz ou texto, guia de programação (EPG) e função Playback.',
+          'Ativação simples por Código de 16 Dígitos: nada de digitar links M3U gigantes pelo controle remoto da TV.',
+          'Conta vinculada na nuvem: proteja sua assinatura vinculando seu e-mail ou número de telefone direto no menu Perfil.',
+          'Controle Parental integrado: bloqueie conteúdos adultos com senha PIN de forma simples e segura para toda a família.',
+        ],
+      },
+      {
+        id: 'teste-gratis-e-planos-sem-fidelidade',
+        heading: 'Como testar grátis por 3 dias antes de assinar?',
+        paragraphs: [
+          'Enquanto listas IPTV comuns liberam testes curtos de apenas 1 ou 2 horas, a UniTV disponibiliza 3 dias (72 horas) de Teste Grátis para novos usuários que instalam o aplicativo pela primeira vez em seu aparelho compatível.',
+          'Após conhecer a plataforma, você pode escolher planos pré-pagos a partir de R$ 29,90 (Mensal), R$ 79,90 (Trimestral), R$ 159,90 (Semestral) ou R$ 289,90 (Anual — equivalente a apenas R$ 24,15/mês), com envio imediato do código de recarga após o pagamento via PIX.',
+        ],
+        internalLink: {
+          text: 'Compare todos os Planos e Preços Oficiais da UniTV',
+          url: '/planos',
+        },
+      },
+    ],
+    faqSnippet: [
+      {
+        question: 'Preciso configurar lista M3U para usar a UniTV?',
+        answer:
+          'Não! Basta instalar o aplicativo oficial da UniTV na sua TV Android, TV Box, Fire TV Stick ou Celular Android. Todo o catálogo de canais, filmes e séries já vem integrado e organizado automaticamente.',
+      },
+      {
+        question: 'Qual a velocidade de internet ideal para substituir listas IPTV pela UniTV?',
+        answer:
+          'Recomendamos internet banda larga a partir de 15 Mbps para canais HD/Full HD e 30 Mbps ou mais para conteúdos 4K, preferencialmente conectada via cabo de rede Ethernet ou Wi-Fi 5GHz.',
+      },
+    ],
+    ctaTitle: 'Quer testar a UniTV por 3 dias grátis ou assinar agora?',
+    ctaDescription:
+      'Chame nossa equipe no WhatsApp para receber o instalador oficial e liberar seu acesso em poucos minutos.',
+    whatsappCustomMessage: 'Olá! Vi o comparativo entre UniTV e IPTV/OpTV no blog e quero testar/assinar a UniTV.',
+    relatedSlugs: ['como-funciona-a-unitv', 'qual-o-melhor-plano-unitv', 'como-conseguir-teste-gratis-da-unitv'],
+  },
+  {
+    id: '12',
+    slug: 'codigo-downloader-unitv-atualizado-apk',
+    title: 'Código Downloader UniTV Atualizado e Como Baixar o APK Oficial na TV Box e Fire Stick',
+    seoTitle: 'Código Downloader UniTV Atualizado e Como Baixar o APK',
+    metaDescription:
+      'Procurando o código Downloader da UniTV atualizado ou link direto do APK? Veja como baixar e instalar na TV Box, Fire TV Stick, Smart TV e Celular.',
+    category: 'Guias e Tutoriais',
+    publishedAt: '2026-11-08',
+    updatedAt: '2026-11-08',
+    readingTime: '5 min de leitura',
+    excerpt:
+      'Aprenda o passo a passo exato para baixar o APK oficial da UniTV usando o aplicativo Downloader na Smart TV Android, TV Box e Amazon Fire TV Stick.',
+    coverImage: '/assets/images/blog_smart_tv_1793827140047.jpg',
+    coverAlt: 'Tela de instalação do aplicativo UniTV via código Downloader na Smart TV e Fire TV Stick',
+    visualTheme: 'blue',
+    iconType: 'tv',
+    sections: [
+      {
+        id: 'o-que-e-codigo-downloader-unitv',
+        heading: 'Para que serve o código do aplicativo Downloader na instalação da UniTV?',
+        paragraphs: [
+          'Como o aplicativo oficial da UniTV é distribuído em formato APK direto para sistemas Android TV, Google TV, Fire OS e TV Box, a maneira mais rápida de baixá-lo na televisão sem precisar de pendrive é utilizando o aplicativo gratuito "Downloader by AFTVnews" (disponível na Google Play Store e na Amazon Appstore).',
+          'Em vez de digitar um endereço web longo usando o controle remoto, você digita apenas o código numérico curto atualizado no campo central do Downloader e o instalador oficial da UniTV é baixado automaticamente.',
+        ],
+        internalLink: {
+          text: 'Acesse nosso Guia Interativo de Como Instalar por Aparelho',
+          url: '/como-instalar',
+        },
+      },
+      {
+        id: 'passo-a-passo-downloader',
+        heading: 'Passo a passo para instalar a UniTV pelo Downloader em 3 minutos',
+        paragraphs: [
+          'Siga estas etapas simples no seu Fire TV Stick, Xiaomi Mi Box, Smart TV Android (TCL, Philips, Philco, Sony, AOC) ou TV Box:',
+        ],
+        bullets: [
+          '1. Abra a loja de aplicativos da sua TV (Play Store ou Amazon Appstore), pesquise por "Downloader" (ícone laranja) e instale-o.',
+          '2. Nas configurações do seu aparelho (Configurações > Meu Fire TV / Segurança > Opções para Desenvolvedores), ative a permissão "Instalar aplicativos desconhecidos" para o app Downloader.',
+          '3. Solicite o código numérico atualizado do Downloader ou link curto diretamente no nosso WhatsApp de suporte (mantemos sempre a versão mais recente livre de erros).',
+          '4. Digite o código no aplicativo Downloader, clique em "Go" (Ir), aguarde o download concluir e selecione "Instalar".',
+        ],
+      },
+      {
+        id: 'diferenca-versao-tv-e-celular',
+        heading: 'Atenção: instale a versão correta para TV ou para Celular',
+        paragraphs: [
+          'A UniTV possui dois instaladores APK diferentes: a versão TV (desenvolvida para telas horizontais e navegação por controle remoto) e a versão Mobile (feita para toque na tela em celulares e tablets Android).',
+          'Ao chamar nossa equipe no WhatsApp, enviamos na hora o código exato para a sua TV ou o link direto para o seu celular Android, além de liberar seus 3 dias de teste grátis para novos aparelhos.',
+        ],
+        internalLink: {
+          text: 'Veja também como instalar a UniTV no Celular Android',
+          url: '/blog/como-instalar-unitv-no-celular',
+        },
+      },
+    ],
+    faqSnippet: [
+      {
+        question: 'Como recebo o código atualizado do Downloader para a UniTV?',
+        answer:
+          'Basta clicar no botão de WhatsApp desta página e informar qual é o seu aparelho (TV Box, Smart TV ou Fire Stick). Nossa equipe envia o código atualizado na hora e acompanha sua instalação.',
+      },
+      {
+        question: 'Posso instalar via Pendrive USB na TV Box?',
+        answer:
+          'Sim! Se preferir, você pode baixar o arquivo APK pelo computador ou celular, copiar para um pendrive e conectar na porta USB da sua TV Box.',
+      },
+    ],
+    ctaTitle: 'Precisa do Código Downloader Atualizado ou Link do APK?',
+    ctaDescription:
+      'Chame nosso suporte no WhatsApp agora mesmo e receba o código atualizado com ajuda passo a passo para instalar.',
+    whatsappCustomMessage: 'Olá! Gostaria de receber o código atualizado do Downloader / APK para instalar a UniTV.',
+    relatedSlugs: ['como-instalar-unitv-na-smart-tv', 'como-instalar-unitv-no-celular', 'quais-dispositivos-sao-compativeis-com-unitv'],
+  },
+  {
+    id: '13',
+    slug: 'qual-o-melhor-plano-unitv',
+    title: 'Recarga UniTV via PIX: Qual o melhor plano para assinar (Mensal, Trimestral ou Anual)?',
+    seoTitle: 'Qual o Melhor Plano UniTV? Mensal, Trimestral ou Anual',
+    metaDescription:
+      'Compare os planos de recarga UniTV: Mensal R$ 29,90, Trimestral R$ 79,90, Semestral e Anual (R$ 24,15/mês). Código de 16 dígitos na hora após o PIX.',
+    category: 'Planos e Ativação',
+    publishedAt: '2026-11-08',
+    updatedAt: '2026-11-08',
+    readingTime: '5 min de leitura',
+    excerpt:
+      'Em dúvida entre a recarga UniTV Mensal, Trimestral, Semestral ou Anual? Compare o custo mensal de cada pacote e veja como receber seu código na hora via PIX.',
+    coverImage: '/assets/images/blog_unitv_recarga_1793827142655.jpg',
+    coverAlt: 'Comparativo de planos e códigos de recarga oficial da UniTV Mensal, Trimestral, Semestral e Anual',
+    visualTheme: 'emerald',
+    iconType: 'key',
+    sections: [
+      {
+        id: 'todos-os-planos-liberam-tudo',
+        heading: 'Existe diferença de conteúdo entre os planos da UniTV?',
+        paragraphs: [
+          'Uma das dúvidas mais comuns antes de comprar uma recarga UniTV é se o plano Anual libera mais canais ou filmes do que o plano Mensal. A resposta é simples: todos os planos da UniTV oferecem exatamente o mesmo acesso completo e irrestrito a 100% do catálogo (canais ao vivo SD/HD/FHD/4K, filmes, séries, esportes, infantil e animes).',
+          'A única diferença entre os planos é o tempo de validade do acesso (30, 90, 180 ou 365 dias) e o desconto progressivo no valor mensal equivalente.',
+        ],
+        internalLink: {
+          text: 'Veja a tabela oficial completa na página de Planos e Preços',
+          url: '/planos',
+        },
+      },
+      {
+        id: 'comparativo-custo-beneficio',
+        heading: 'Comparativo de valores: qual plano compensa mais?',
+        paragraphs: [
+          'Confira quanto você economiza em cada modalidade de recarga pré-paga da UniTV:',
+        ],
+        bullets: [
+          'Plano Mensal (30 dias — R$ 29,90): Ideal para quem acabou de sair do teste grátis de 3 dias e quer experimentar o primeiro mês completo com total flexibilidade.',
+          'Plano Trimestral (90 dias — R$ 79,90): Excelente equilíbrio, saindo por apenas R$ 26,63 por mês e evitando a necessidade de renovar todo mês.',
+          'Plano Semestral (180 dias — R$ 159,90): Garante meio ano de acesso contínuo com ótimo desconto.',
+          'Plano Anual (365 dias — R$ 289,90): O campeão em custo-benefício! Equivale a apenas R$ 24,15 por mês, gerando a maior economia anual e 12 meses inteiros sem preocupação.',
+        ],
+      },
+      {
+        id: 'como-funciona-entrega-pix',
+        heading: 'Como funciona o pagamento via PIX e o envio do código de 16 dígitos?',
+        paragraphs: [
+          'Ao escolher seu plano em nosso portal e clicar para comprar pelo WhatsApp, nossa equipe gera a chave PIX oficial. Assim que o pagamento é confirmado (o que leva poucos segundos), enviamos imediatamente seu Código de Recarga de 16 dígitos.',
+          'Basta abrir o aplicativo UniTV, entrar em Perfil > Código de Recarga, digitar os 16 números e confirmar. Se você já tiver dias ativos na conta, o novo período é somado automaticamente sem perder nenhum dia!',
+        ],
+        internalLink: {
+          text: 'Aprenda passo a passo Como Ativar seu Código de 16 Dígitos',
+          url: '/blog/como-ativar-unitv',
+        },
+      },
+    ],
+    faqSnippet: [
+      {
+        question: 'Os planos da UniTV têm fidelidade ou cobrança automática?',
+        answer:
+          'Não. Todos os planos são 100% pré-pagos via código de recarga. Você paga apenas pelo período escolhido, sem fidelidade e sem cobranças automáticas.',
+      },
+      {
+        question: 'Posso renovar antes do meu plano atual vencer?',
+        answer:
+          'Sim! O sistema da UniTV é cumulativo: se restam 5 dias na sua conta e você ativa uma recarga de 30 dias, seu saldo passa a ser de 35 dias imediatamente.',
+      },
+    ],
+    ctaTitle: 'Escolha seu plano e receba seu código de 16 dígitos na hora',
+    ctaDescription:
+      'Atendimento imediato via WhatsApp com confirmação rápida por PIX e suporte completo na ativação.',
+    whatsappCustomMessage: 'Olá! Vi o comparativo dos planos no blog e quero comprar minha recarga UniTV via PIX.',
+    relatedSlugs: ['como-ativar-unitv', 'como-renovar-unitv', 'como-adquirir-unitv'],
+  },
+  {
+    id: '14',
+    slug: 'como-instalar-unitv-no-celular',
+    title: 'UniTV no Celular Android: Como baixar o APK Mobile e vincular sua conta com a TV',
+    seoTitle: 'UniTV no Celular Android: Baixar APK e Vincular Conta',
+    metaDescription:
+      'Aprenda como baixar e instalar a UniTV Mobile no celular Android, vincular seu e-mail ou número com segurança e usar sua assinatura na TV e celular.',
+    category: 'Guias e Tutoriais',
+    publishedAt: '2026-11-08',
+    updatedAt: '2026-11-08',
+    readingTime: '5 min de leitura',
+    excerpt:
+      'Saiba como instalar a versão exclusiva para smartphones e tablets Android (UniTV Mobile) e como vincular sua conta para proteger sua recarga.',
+    coverImage: '/assets/images/previa_interface_unitv.jpg',
+    coverAlt: 'Aplicativo UniTV Mobile rodando em smartphones Android ao lado da Smart TV',
+    visualTheme: 'purple',
+    iconType: 'smartphone',
+    sections: [
+      {
+        id: 'como-funciona-unitv-mobile',
+        heading: 'Como funciona a versão Mobile da UniTV para Celular e Tablet Android?',
+        paragraphs: [
+          'Além de funcionar nas Smart TVs e TV Box, a UniTV conta com um aplicativo exclusivo desenvolvido para telas sensíveis ao toque (Touchscreen) de celulares e tablets com sistema Android (Samsung Galaxy, Motorola, Xiaomi, Redmi, Poco, Asus e similares).',
+          'Com a UniTV Mobile instalada no seu smartphone, você pode assistir transmissões ao vivo, jogos de futebol, filmes e séries de qualquer lugar usando Wi-Fi ou internet móvel 4G/5G.',
+        ],
+        internalLink: {
+          text: 'Abra o tutorial direto de instalação para Celular Android',
+          url: '/como-instalar?dispositivo=celular-android',
+        },
+      },
+      {
+        id: 'passo-a-passo-apk-celular',
+        heading: 'Passo a passo para baixar e instalar o UniTV APK no celular',
+        paragraphs: [
+          'A instalação no smartphone Android leva menos de 2 minutos:',
+        ],
+        bullets: [
+          '1. Solicite o link direto atualizado do APK Mobile da UniTV em nosso WhatsApp de atendimento.',
+          '2. Abra o link no navegador do seu celular (Google Chrome) e confirme o download do arquivo .apk.',
+          '3. Ao tocar para abrir o arquivo baixado, caso o Android exiba um aviso de segurança, toque em "Configurações" e marque a opção "Permitir desta fonte".',
+          '4. Conclua a instalação e abra o aplicativo UniTV na tela inicial do seu celular.',
+        ],
+      },
+      {
+        id: 'importancia-vincular-conta',
+        heading: 'Por que você deve vincular sua conta no aplicativo UniTV?',
+        paragraphs: [
+          'Antes ou logo após ativar seu código de recarga de 16 dígitos, acesse o menu Perfil dentro do aplicativo UniTV e faça o vínculo da sua conta com seu e-mail ou número de telefone e uma senha pessoal.',
+          'Vincular a conta garante que seus dias de assinatura fiquem protegidos na nuvem da UniTV (caso você troque de celular ou formate sua TV Box) e permite utilizar suas credenciais de acesso tanto na TV quanto no smartphone Android, respeitando o limite de telas simultâneas do seu plano.',
+        ],
+        internalLink: {
+          text: 'Confira também como funciona o Teste Grátis de 3 Dias',
+          url: '/teste-gratis',
+        },
+      },
+    ],
+    faqSnippet: [
+      {
+        question: 'A UniTV instala direto no iPhone (iOS)?',
+        answer:
+          'O arquivo de instalação (.apk) é exclusivo para o sistema Android. Quem possui iPhone utiliza a UniTV na televisão através de um Fire TV Stick, Mi Box ou TV Box Android e faz toda a contratação e recarga pelo WhatsApp no iPhone.',
+      },
+      {
+        question: 'Preciso pagar duas assinaturas separadas para ter o app na TV e no celular?',
+        answer:
+          'Não! Ao vincular sua conta (e-mail e senha) no aplicativo, você pode entrar com a mesma conta UniTV na sua TV e no seu celular Android.',
+      },
+    ],
+    ctaTitle: 'Quer receber o APK Mobile da UniTV no seu WhatsApp?',
+    ctaDescription:
+      'Chame nossa equipe agora mesmo para receber o link oficial para celular Android e testar grátis por 3 dias.',
+    whatsappCustomMessage: 'Olá! Quero receber o link para instalar a UniTV no meu celular Android.',
+    relatedSlugs: ['codigo-downloader-unitv-atualizado-apk', 'como-ativar-unitv', 'quais-dispositivos-sao-compativeis-com-unitv'],
+  },
+  {
+    id: '15',
+    slug: 'como-assistir-unitv-sem-travar-tv-box',
+    title: 'Como usar a UniTV na TV Box e Smart TV sem travar: 5 configurações de estabilidade',
+    seoTitle: 'Como Usar a UniTV Sem Travar na TV Box e Smart TV (HD)',
+    metaDescription:
+      'Veja 5 dicas práticas para assistir canais ao vivo, futebol e filmes em HD/4K na UniTV sem travamentos na TV Box, Fire TV Stick e Smart TV Android.',
+    category: 'Guias e Tutoriais',
+    publishedAt: '2026-11-08',
+    updatedAt: '2026-11-08',
+    readingTime: '5 min de leitura',
+    excerpt:
+      'Quer máxima fluidez em jogos ao vivo e filmes 4K na sua TV Box ou Smart TV? Confira 5 ajustes simples de conexão e memória que eliminam travamentos.',
+    coverImage: '/assets/images/blog_unitv_app_1793827137959.jpg',
+    coverAlt: 'Configuração de rede e estabilidade da UniTV em TV Box Android e Smart TV',
+    visualTheme: 'orange',
+    iconType: 'shield',
+    sections: [
+      {
+        id: 'cabo-rede-ethernet-vs-wifi',
+        heading: '1. Priorize o cabo de rede (Ethernet) ou rede Wi-Fi 5GHz na TV Box',
+        paragraphs: [
+          'A maioria das TV Box Android possui uma antena Wi-Fi interna simples que sofre interferência de paredes e outros aparelhos domésticos. Para transmissões ao vivo sem oscilações, a dica número um é conectar um cabo de rede (RJ45) diretamente do roteador até a porta Ethernet traseira da sua TV Box ou Smart TV.',
+          'Se o roteador estiver na mesma sala mas você usar um Fire TV Stick (que usa Wi-Fi), conecte-se sempre à rede Wi-Fi "5G" (5GHz) da sua internet, que entrega velocidade muito mais estável do que a rede 2.4GHz tradicional.',
+        ],
+        internalLink: {
+          text: 'Consulte os requisitos técnicos completos em Como Funciona',
+          url: '/como-funciona',
+        },
+      },
+      {
+        id: 'escolha-resolucao-e-limpeza-cache',
+        heading: '2. Escolha a resolução ideal (HD / FHD / 4K) e limpe o cache periodicamente',
+        paragraphs: [
+          'Dentro do reprodutor da UniTV, muitos canais oferecem mais de uma opção de qualidade (SD, HD, Full HD e H265/4K).',
+        ],
+        bullets: [
+          'Se vários aparelhos da casa estiverem baixando arquivos ao mesmo tempo, selecione a opção HD ou H265 para reprodução instantânea.',
+          'Em TV Box mais antigas (com 1 GB ou 2 GB de memória RAM), evite deixar dezenas de outros aplicativos abertos em segundo plano.',
+          'Uma vez por mês, vá em Configurações > Aplicativos > UniTV > Limpar Cache (atenção: clique apenas em Limpar Cache, nunca em Limpar Dados) para manter o app sempre rápido.',
+          'Mantenha o aplicativo sempre na versão oficial mais recente solicitando atualizações ao nosso suporte.',
+        ],
+      },
+      {
+        id: 'reiniciar-roteador-e-box',
+        heading: '3. Reinicie o modem e a TV Box antes de grandes eventos ao vivo',
+        paragraphs: [
+          'Roteadores de operadoras que ficam ligados semanas seguidas acumulam tabela de cache de rota. Desligar o modem da tomada por 30 segundos e religá-lo renova a conexão com o servidor e garante latência mínima durante transmissões esportivas ao vivo.',
+        ],
+        internalLink: {
+          text: 'Veja nossos Planos de Recarga UniTV com Suporte Dedicado',
+          url: '/planos',
+        },
+      },
+    ],
+    faqSnippet: [
+      {
+        question: 'Qual a velocidade mínima de internet para a UniTV rodar liso?',
+        answer:
+          'A partir de 15 Mbps estáveis para canais HD e Full HD, e recomendado 30 Mbps ou superior para conteúdos em resolução 4K.',
+      },
+      {
+        question: 'Se eu limpar o cache do aplicativo UniTV, perco minha assinatura?',
+        answer:
+          'Não! Limpar o cache apaga apenas arquivos temporários de imagem. Além disso, mantendo sua conta vinculada com e-mail e senha no menu Perfil, sua assinatura está 100% protegida.',
+      },
+    ],
+    ctaTitle: 'Quer suporte técnico humano e recarga oficial na hora?',
+    ctaDescription:
+      'Assine ou renove sua UniTV em nosso portal oficial e conte com atendimento completo pelo WhatsApp.',
+    whatsappCustomMessage: 'Olá! Vi as dicas de estabilidade no blog e gostaria de atendimento sobre a UniTV.',
+    relatedSlugs: ['unitv-ou-iptv-qual-melhor-para-assinar', 'como-funciona-a-unitv', 'qual-o-melhor-plano-unitv'],
+  },
 ];
+

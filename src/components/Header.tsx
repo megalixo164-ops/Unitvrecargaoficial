@@ -50,6 +50,33 @@ export const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-[0_1px_3px_rgba(15,23,42,0.04)]">
+      {/* Top Sales Conversion & Authenticity Strip */}
+      <div className="bg-slate-950 text-white border-b border-slate-800/80 text-[11px] sm:text-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 flex items-center justify-between gap-2 overflow-hidden">
+          <div className="flex items-center gap-2 truncate font-medium text-slate-200">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" aria-hidden="true" />
+            <span className="font-bold text-orange-400">UNITV OFICIAL</span>
+            <span aria-hidden="true" className="text-slate-600">|</span>
+            <span className="truncate">
+              <strong className="text-white">R$ 24,15/mês</strong> (no Anual) · Código na hora após o PIX
+            </span>
+          </div>
+          <div className="hidden sm:flex items-center gap-3 shrink-0 font-semibold">
+            <Link to="/teste-gratis" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+              Teste Grátis 3 Dias
+            </Link>
+            <span aria-hidden="true" className="text-slate-700">·</span>
+            <Link to="/como-instalar" className="text-slate-300 hover:text-white transition-colors">
+              Baixar App
+            </Link>
+            <span aria-hidden="true" className="text-slate-700">·</span>
+            <Link to="/planos" className="text-orange-400 hover:text-orange-300 transition-colors">
+              Explorar Ofertas →
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Subtle Top Brand Gradient Accent Line */}
       <div
         className="h-[2.5px] w-full bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600"
@@ -84,6 +111,7 @@ export const Header: React.FC = () => {
         <nav aria-label="Navegação Principal" className="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-medium">
           {primaryNavLinks.map((item) => {
             const active = isActive(item.path);
+            const isPlans = item.path === '/planos';
             return (
               <Link
                 key={item.path}
@@ -91,7 +119,9 @@ export const Header: React.FC = () => {
                 className={`whitespace-nowrap shrink-0 px-3.5 py-2 rounded-xl transition-all ${
                   active
                     ? 'bg-slate-950 text-white font-semibold shadow-xs'
-                    : 'text-slate-600 hover:text-slate-950 hover:bg-slate-100/80'
+                    : isPlans
+                      ? 'bg-orange-50/90 text-orange-700 border border-orange-200/80 hover:bg-orange-100/80 font-semibold'
+                      : 'text-slate-600 hover:text-slate-950 hover:bg-slate-100/80'
                 }`}
               >
                 {item.label}
@@ -131,19 +161,47 @@ export const Header: React.FC = () => {
           <div className="grid grid-cols-1 gap-1.5">
             {allMobileLinks.map((item) => {
               const active = isActive(item.path);
+              const isPlans = item.path === '/planos';
               return (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`min-h-[48px] flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all active:scale-[0.99] ${
-                    active
-                      ? 'bg-slate-950 text-white shadow-xs'
-                      : 'bg-slate-50/80 text-slate-800 hover:bg-slate-100 border border-slate-200/60'
+                    isPlans
+                      ? active
+                        ? 'bg-gradient-to-r from-orange-600 via-rose-600 to-purple-700 text-white shadow-sm'
+                        : 'bg-gradient-to-r from-orange-50 via-rose-50/70 to-purple-50/60 text-orange-950 border border-orange-300/80 shadow-2xs'
+                      : active
+                        ? 'bg-slate-950 text-white shadow-xs'
+                        : 'bg-slate-50/80 text-slate-800 hover:bg-slate-100 border border-slate-200/60'
                   }`}
                 >
-                  <span>{item.label}</span>
-                  <ChevronRight className={`w-4 h-4 shrink-0 ${active ? 'text-orange-400' : 'text-slate-400'}`} />
+                  <div className="flex items-center gap-2">
+                    <span>{item.label}</span>
+                    {isPlans && (
+                      <span
+                        className={`text-[11px] font-mono-tabular font-bold px-2 py-0.5 rounded-md ${
+                          active
+                            ? 'bg-white/20 text-white'
+                            : 'bg-orange-100/90 text-orange-700'
+                        }`}
+                      >
+                        R$ 29,90+
+                      </span>
+                    )}
+                  </div>
+                  <ChevronRight
+                    className={`w-4 h-4 shrink-0 ${
+                      isPlans
+                        ? active
+                          ? 'text-white'
+                          : 'text-orange-600'
+                        : active
+                          ? 'text-orange-400'
+                          : 'text-slate-400'
+                    }`}
+                  />
                 </Link>
               );
             })}

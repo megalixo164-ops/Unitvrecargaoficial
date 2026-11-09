@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { MessageCircle, Star, CheckCircle2, Users, ShieldCheck, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { MessageCircle, Star, CheckCircle2, Users, ShieldCheck, Clock, ArrowRight } from 'lucide-react';
 import { useSiteConfig } from '../context/ConfigContext';
 import { CUSTOMER_TESTIMONIALS, CustomerTestimonial } from '../data/testimonialsData';
 
@@ -58,13 +59,13 @@ export const CustomerTestimonialsSection: React.FC<CustomerTestimonialsSectionPr
     return item.category === selectedFilter;
   });
 
-  const displayedTestimonials = showAllByDefault ? filteredList : filteredList.slice(0, 6);
+  const displayedTestimonials = showAllByDefault ? filteredList : filteredList.slice(0, 4);
 
   return (
-    <section id="sec-clientes" className="py-16 lg:py-24 bg-slate-50/70 border-b border-slate-200/90">
+    <section id="sec-clientes" className="py-14 lg:py-20 bg-slate-50/70 border-b border-slate-200/90">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header + Quantitative Social Proof Banner */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-10">
           <div className="lg:col-span-7 space-y-3">
             <div className="text-xs font-bold uppercase tracking-wider text-orange-600">
               Avaliações Reais · Clientes em Todo o Brasil
@@ -138,7 +139,7 @@ export const CustomerTestimonialsSection: React.FC<CustomerTestimonialsSectionPr
           </div>
         </div>
 
-        {/* 10 Customer Testimonials Grid */}
+        {/* Customer Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {displayedTestimonials.map((item, idx) => (
             <article
@@ -188,6 +189,18 @@ export const CustomerTestimonialsSection: React.FC<CustomerTestimonialsSectionPr
             </article>
           ))}
         </div>
+
+        {!showAllByDefault && (
+          <div className="mt-8 text-center">
+            <Link
+              to="/avaliacoes"
+              className="inline-flex items-center justify-center gap-2 min-h-[46px] px-6 py-3 rounded-xl bg-white border border-slate-300 hover:border-orange-500 text-xs sm:text-sm font-bold text-slate-900 hover:text-orange-600 shadow-2xs transition-all active:scale-[0.98]"
+            >
+              <span>Ver mais avaliações de clientes em todo o Brasil</span>
+              <ArrowRight className="w-4 h-4 text-orange-600" />
+            </Link>
+          </div>
+        )}
 
         {/* Bottom Conversion Bar */}
         <div className="mt-10 relative rounded-2xl p-[1.5px] bg-gradient-to-r from-orange-500/60 via-rose-500/50 to-purple-600/60 shadow-xl">

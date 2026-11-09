@@ -97,41 +97,54 @@ export const PlansPage: React.FC = () => {
                   />
 
                   <div className="relative z-10">
-                    {plan.featured && (
+                    {/* Official Voucher Header with Logo Icon */}
+                    <div className="flex items-start justify-between gap-2 mb-3">
+                      <div className="flex items-center gap-2.5">
+                        <picture className="shrink-0 bg-white p-1.5 rounded-xl border border-slate-200/80 shadow-2xs">
+                          <source srcSet="/assets/images/logo_unitv.webp" type="image/webp" />
+                          <img
+                            src={config.officialLogoUrl}
+                            alt="UniTV"
+                            width={28}
+                            height={28}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-6 w-6 object-contain"
+                          />
+                        </picture>
+                        <div>
+                          <h2
+                            className={`text-base sm:text-lg font-display font-extrabold leading-tight ${
+                              plan.featured ? 'text-white' : 'text-slate-950'
+                            }`}
+                          >
+                            {plan.name}
+                          </h2>
+                          <div
+                            className={`text-[11px] font-medium ${
+                              plan.featured ? 'text-orange-300' : 'text-slate-500'
+                            }`}
+                          >
+                            Assinatura por {plan.periodLabel}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {plan.featured ? (
                       <div className="mb-3 inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-rose-400 to-purple-400">
                         <span>★ Mais Escolhido · Melhor Custo-Benefício</span>
                       </div>
+                    ) : (
+                      plan.savingsLabel && (
+                        <div className="mb-3 text-[11px] font-bold text-emerald-700">
+                          {plan.savingsLabel}
+                        </div>
+                      )
                     )}
 
-                    <div className="flex items-center justify-between gap-2 text-xs mb-2.5">
-                      <span
-                        className={
-                          plan.featured
-                            ? 'text-orange-300 font-semibold'
-                            : 'text-slate-600 font-semibold'
-                        }
-                      >
-                        {plan.periodLabel}
-                      </span>
-                      {plan.savingsLabel && (
-                        <span
-                          className={
-                            plan.featured
-                              ? 'text-emerald-400 font-semibold'
-                              : 'text-emerald-700 font-semibold'
-                          }
-                        >
-                          {plan.savingsLabel}
-                        </span>
-                      )}
-                    </div>
-
-                    <h2 className={`text-xl font-display font-extrabold ${plan.featured ? 'text-white' : 'text-slate-950'}`}>
-                      {plan.name}
-                    </h2>
-
                     <div
-                      className={`mt-4 pb-4 border-b ${
+                      className={`mt-1 pb-4 border-b ${
                         plan.featured ? 'border-slate-800' : 'border-slate-200'
                       }`}
                     >
@@ -144,20 +157,24 @@ export const PlansPage: React.FC = () => {
                       >
                         {plan.price}
                       </div>
-                      {plan.equivalentMonthly && (
+                      {plan.equivalentMonthly ? (
                         <div className={`text-xs mt-1 font-medium ${plan.featured ? 'text-slate-300' : 'text-slate-500'}`}>
                           {plan.equivalentMonthly}
+                        </div>
+                      ) : (
+                        <div className={`text-xs mt-1 font-medium ${plan.featured ? 'text-slate-300' : 'text-slate-500'}`}>
+                          Plano flexível sem fidelidade
                         </div>
                       )}
                     </div>
 
-                    <p className={`mt-4 text-xs leading-relaxed ${plan.featured ? 'text-slate-300' : 'text-slate-600'}`}>
+                    <p className={`mt-3.5 text-xs leading-relaxed ${plan.featured ? 'text-slate-300' : 'text-slate-600'}`}>
                       {plan.description}
                     </p>
 
-                    <ul className="mt-5 space-y-2.5">
+                    <ul className="mt-4 space-y-2">
                       {plan.features.map((feat, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-xs">
+                        <li key={idx} className="flex items-start gap-2 text-xs">
                           <span
                             className="w-4 h-4 rounded-full bg-gradient-to-br from-orange-500 via-rose-500 to-purple-600 flex items-center justify-center shrink-0 mt-0.5 shadow-xs"
                             aria-hidden="true"
@@ -170,20 +187,39 @@ export const PlansPage: React.FC = () => {
                     </ul>
                   </div>
 
-                  <div className="mt-8 pt-4 relative z-10">
+                  <div className="mt-6 pt-4 space-y-2.5 relative z-10">
                     <a
                       href={buildWhatsAppUrl(config.whatsapp.rawNumber, plan.whatsappMessage)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-full inline-flex items-center justify-center gap-2 px-4 py-3.5 text-xs sm:text-sm font-bold rounded-xl transition-all whitespace-nowrap shadow-md active:scale-[0.98] ${
+                      className={`w-full min-h-[48px] inline-flex items-center justify-center gap-2 px-4 py-3 text-xs sm:text-sm font-bold rounded-xl transition-all whitespace-nowrap shadow-md active:scale-[0.98] ${
                         plan.featured
                           ? 'bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600 hover:from-orange-400 hover:via-rose-400 hover:to-purple-500 text-white shadow-orange-500/25'
                           : 'bg-slate-950 hover:bg-gradient-to-r hover:from-orange-500 hover:via-rose-500 hover:to-purple-600 text-white'
                       }`}
                     >
                       <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
-                      <span>Contratar {plan.name}</span>
+                      <span>Comprar {plan.name}</span>
                     </a>
+
+                    <p
+                      className={`text-center text-[11px] leading-snug ${
+                        plan.featured ? 'text-slate-400' : 'text-slate-500'
+                      }`}
+                    >
+                      Código enviado na hora pelo WhatsApp após o PIX.
+                    </p>
+
+                    <Link
+                      to="/duvidas-frequentes"
+                      className={`w-full min-h-[40px] inline-flex items-center justify-center px-3 py-2 text-xs font-semibold rounded-xl border transition-colors ${
+                        plan.featured
+                          ? 'border-slate-800 bg-slate-900/70 text-slate-300 hover:bg-slate-900 hover:text-white'
+                          : 'border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-slate-950'
+                      }`}
+                    >
+                      Tirar dúvidas antes de comprar
+                    </Link>
                   </div>
                 </div>
               </div>
