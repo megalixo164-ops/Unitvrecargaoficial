@@ -43,10 +43,10 @@ export const BlogArticleVisual: React.FC<{ post: BlogPost; heightClass?: string 
 
   return (
     <div
-      className={`group w-full ${heightClass} rounded-xl bg-gradient-to-br ${themeGradients[post.visualTheme]} border overflow-hidden relative flex flex-col justify-between`}
+      className={`group w-full aspect-video rounded-xl bg-gradient-to-br ${themeGradients[post.visualTheme]} border overflow-hidden relative flex flex-col justify-between`}
     >
-      {!imgError && post.coverImage && (
-        <picture className="absolute inset-0 w-full h-full block">
+      {!imgError && post.coverImage ? (
+        <picture className="w-full h-full block">
           <source srcSet={post.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
           <img
             src={post.coverImage}
@@ -59,26 +59,22 @@ export const BlogArticleVisual: React.FC<{ post: BlogPost; heightClass?: string 
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
           />
         </picture>
+      ) : (
+        <>
+          <div className="p-4 flex items-center justify-between relative z-10">
+            <span className="text-[11px] font-mono-tabular font-semibold text-white/95 bg-slate-950/75 backdrop-blur-xs px-2.5 py-1 rounded-md border border-white/15">
+              {post.category.toUpperCase()}
+            </span>
+            <div className="w-8 h-8 rounded-lg bg-slate-950/75 backdrop-blur-xs border border-white/15 flex items-center justify-center">
+              {renderIcon()}
+            </div>
+          </div>
+
+          <div className="p-4 relative z-10 flex items-center justify-between text-xs text-slate-200">
+            <span className="font-medium">Guia Passo a Passo</span>
+          </div>
+        </>
       )}
-
-      {/* Measured contrast scrim for text legibility */}
-      <div
-        className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-slate-950/30"
-        aria-hidden="true"
-      />
-
-      <div className="p-4 flex items-center justify-between relative z-10">
-        <span className="text-[11px] font-mono-tabular font-semibold text-white/95 bg-slate-950/75 backdrop-blur-xs px-2.5 py-1 rounded-md border border-white/15">
-          {post.category.toUpperCase()}
-        </span>
-        <div className="w-8 h-8 rounded-lg bg-slate-950/75 backdrop-blur-xs border border-white/15 flex items-center justify-center">
-          {renderIcon()}
-        </div>
-      </div>
-
-      <div className="p-4 relative z-10 flex items-center justify-between text-xs text-slate-200">
-        <span className="font-medium">App Oficial UniTV · Guia Passo a Passo</span>
-      </div>
     </div>
   );
 };
